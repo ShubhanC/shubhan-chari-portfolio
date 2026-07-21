@@ -10,10 +10,9 @@
     "avatar": ""
   },
   "categories": [
-    "Deep Learning",
+    "Deep Learning/Computer Vision",
     "NLP",
-    "ML / Healthcare",
-    "Computer Vision",
+    "Machine Learning",
     "Data Science",
     "Software Engineering"
   ],
@@ -21,7 +20,7 @@
     {
       "id": "brain-tumor-classifier",
       "title": "Brain Tumor Classifier",
-      "category": "Deep Learning",
+      "category": "Deep Learning/Computer Vision",
       "description": "A ResNet50-based deep learning web app that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with ~95.9% accuracy. Built with PyTorch, fine-tuned via transfer learning, and deployed as an interactive Streamlit app.",
       "image": "",
       "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
@@ -45,7 +44,7 @@
     {
       "id": "parkinsons-detection",
       "title": "Parkinson's Disease Detection",
-      "category": "ML / Healthcare",
+      "category": "Machine Learning",
       "description": "Gradient Boosting classifier (XGBoost) for detecting Parkinson's disease from vocal feature measurements. Uses GridSearch-optimized hyperparameters on UCI Parkinson's dataset with 22 vocal cord features.",
       "image": "",
       "tags": ["XGBoost", "Scikit-learn", "Classification", "Healthcare"],
@@ -69,7 +68,7 @@
     {
       "id": "color-detection",
       "title": "Color Detection",
-      "category": "Computer Vision",
+      "category": "Deep Learning/Computer Vision",
       "description": "OpenCV-based color detection project that identifies colors in images using color histograms and thresholding.",
       "image": "",
       "tags": ["OpenCV", "Computer Vision", "Python"],
@@ -124,7 +123,7 @@
       "type": "external",
       "url": "",
       "github": "",
-      "status": "planned"
+      "status": "in-progress"
     },
     {
       "id": "wine-quality",
@@ -153,7 +152,7 @@
     {
       "id": "credit-card-fraud",
       "title": "Credit Card Fraud Detection",
-      "category": "Deep Learning",
+      "category": "Data Science",
       "description": "Detect fraudulent credit card transactions using anomaly detection and classification on highly imbalanced data.",
       "image": "",
       "tags": ["Anomaly Detection", "Imbalanced Data", "Classification"],
@@ -165,7 +164,7 @@
     {
       "id": "recommendation-system",
       "title": "Movie Recommendation System",
-      "category": "ML / Deep Learning",
+      "category": "Machine Learning",
       "description": "Content-based and collaborative filtering recommendation engine for movies using matrix factorization and neighborhood methods.",
       "image": "",
       "tags": ["Recommender System", "Collaborative Filtering", "Matrix Factorization"],
@@ -189,7 +188,7 @@
     {
       "id": "breast-cancer-classification",
       "title": "Breast Cancer Classification",
-      "category": "ML / Healthcare",
+      "category": "Machine Learning",
       "description": "Deep learning model for breast cancer classification using Keras and medical imaging data.",
       "image": "",
       "tags": ["Deep Learning", "Keras", "Medical Imaging", "Classification"],
@@ -213,7 +212,7 @@
     {
       "id": "cooking-chatbot",
       "title": "Cooking Chatbot",
-      "category": "Deep Learning",
+      "category": "Deep Learning/Computer Vision",
       "description": "AI-powered chatbot for tracking your pantry and providing recipe suggestions based on available ingredients.",
       "image": "",
       "tags": ["Deep Learning", "Computer Vision", "NLP", "PyTorch", "CLIP", "PostgreSQL", "SQL", "Flask"],
@@ -221,6 +220,18 @@
       "url": "https://cookingchatbot.vercel.app/",
       "github": "https://github.com/groversomanshi/Cooking-Chatbot",
       "status": "complete"
+    },
+    {
+      "id": "musichead",
+      "title": "Musichead",
+      "category": "Software Engineering",
+      "description": "Web app to discover music similar to your favorites and compare songs across musical attributes.",
+      "image": "",
+      "tags": ["React", "Node.js", "API Integration", "Audio Analysis"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/Musichead",
+      "status": "in-progress"
     }
   ]
 }

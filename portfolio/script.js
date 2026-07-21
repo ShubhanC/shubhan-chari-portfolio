@@ -52,17 +52,14 @@ function renderProfile(profile) {
 
     if (profile.github && github) {
         github.href = profile.github;
-        github.textContent = '🐙 GitHub';
     }
     if (profile.linkedin && linkedin) {
         linkedin.href = profile.linkedin;
-        linkedin.textContent = '💼 LinkedIn';
     } else if (linkedin) {
         linkedin.style.display = 'none';
     }
     if (profile.email && email) {
         email.href = `mailto:${profile.email}`;
-        email.textContent = '✉️ Email';
     }
 }
 
@@ -218,6 +215,9 @@ function filterProjects(filter) {
         sections.forEach(s => s.style.display = '');
         return;
     }
+
+    // "planned" is hidden entirely — never shown in any view
+    if (filter === 'planned') return;
 
     cards.forEach(c => {
         if (c.dataset.status === filter) {
