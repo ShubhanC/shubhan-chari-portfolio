@@ -105,15 +105,62 @@ function renderProjects(projects) {
     }
 
     grid.innerHTML = html;
+
+    // Wire up iframe buttons after cards are in the DOM
+    document.querySelectorAll('.card-btn.iframe-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const overlay = document.getElementById('app-overlay');
+            const iframe = document.getElementById('app-iframe');
+            const titleBar = document.getElementById('app-title-bar');
+            if (!overlay || !iframe) return;
+            titleBar.textContent = btn.dataset.appTitle || 'App';
+            iframe.src = btn.dataset.appUrl || '';
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
 }
+
+// Close iframe overlay
+document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('close-app');
+    const overlay = document.getElementById('app-overlay');
+    if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+            const iframe = document.getElementById('app-iframe');
+            if (iframe) iframe.src = '';
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        // Close on overlay background click
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                const iframe = document.getElementById('app-iframe');
+                if (iframe) iframe.src = '';
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
 
 function renderCard(proj) {
     const statusClass = (proj.status || 'planned').toLowerCase().replace(' ', '-');
     const hasUrl = proj.url && proj.type === 'external';
     const isLocal = proj.type === 'internal' && proj.url;
+    const isIframe = proj.type === 'iframe' && proj.url;
 
     let actions = '';
-    if (hasUrl || isLocal) {
+    if (isIframe) {
+        actions += `
+            <button class="card-btn primary iframe-btn"
+                data-app-url="${escapeHtml(proj.url)}?embed=true"
+                data-app-title="${escapeHtml(proj.title)}">
+                🚀 Launch
+            </button>
+        `;
+    } else if (hasUrl || isLocal) {
         actions += `
             <a href="${escapeHtml(proj.url)}" class="card-btn primary" target="${proj.type === 'external' ? '_blank' : '_self'}" rel="noopener">
                 ${proj.type === 'internal' ? '🚀 Launch' : '🔗 Visit'}

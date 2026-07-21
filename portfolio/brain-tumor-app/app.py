@@ -155,13 +155,25 @@ st.warning(
 )
 
 # ── Sidebar ──
-model = load_model()
 model_name = f"ResNet50 (fine-tuned)"
 st.sidebar.markdown(f"**Model:** {model_name}")
 st.sidebar.markdown(f"**Device:** {DEVICE}")
 st.sidebar.markdown(f"**Classes:** {len(CLASS_NAMES)} — {', '.join(CLASS_NAMES)}")
 st.sidebar.markdown(f"**Accuracy:** ~95.9% (validation)")
 st.sidebar.markdown("---")
+
+# Lazy load model — only when user uploads an image
+model = None
+model_loaded = False
+
+def get_model():
+    global model, model_loaded
+    if model_loaded:
+        return model
+    with st.spinner("Downloading model from HuggingFace Hub (first time takes ~15s)..."):
+        model = load_model()
+        model_loaded = True
+    return model
 
 # ── How it works ──
 with st.expander("ℹ️ How it works"):
@@ -241,6 +253,7 @@ if uploaded_file is not None:
 
     # Run inference
     with st.spinner("Analyzing MRI scan..."):
+        model = get_model()
         pred_idx, probs, img_tensor = predict(image)
 
     # ── Display results ──
