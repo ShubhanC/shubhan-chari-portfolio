@@ -10,7 +10,7 @@
     "avatar": ""
   },
   "categories": [
-    "ML / Deep Learning",
+    "Deep Learning",
     "NLP",
     "ML / Healthcare",
     "Computer Vision",
@@ -21,7 +21,7 @@
     {
       "id": "brain-tumor-classifier",
       "title": "Brain Tumor Classifier",
-      "category": "ML / Deep Learning",
+      "category": "Deep Learning",
       "description": "A ResNet50-based deep learning web app that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with ~95.9% accuracy. Built with PyTorch, fine-tuned via transfer learning, and deployed as an interactive Streamlit app.",
       "image": "",
       "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
@@ -153,7 +153,7 @@
     {
       "id": "credit-card-fraud",
       "title": "Credit Card Fraud Detection",
-      "category": "ML / Deep Learning",
+      "category": "Deep Learning",
       "description": "Detect fraudulent credit card transactions using anomaly detection and classification on highly imbalanced data.",
       "image": "",
       "tags": ["Anomaly Detection", "Imbalanced Data", "Classification"],
@@ -197,6 +197,30 @@
       "url": "",
       "github": "",
       "status": "planned"
+    },
+    {
+      "id": "uiuc-study-spots",
+      "title": "UIUC Study Spots",
+      "category": "Data Science",
+      "description": "Interactive map for finding study spaces on the UIUC campus.",
+      "image": "https://uiuc-study-spots.vercel.app/svg_codes/front_page2.svg",
+      "tags": ["Statistical Modeling", "Web Development", "Mapping", "UIUC"],
+      "type": "external",
+      "url": "https://uiuc-study-spots.vercel.app/",
+      "github": "https://github.com/ShubhanC/uiuc-study-spots",
+      "status": "complete"
+    },
+    {
+      "id": "cooking-chatbot",
+      "title": "Cooking Chatbot",
+      "category": "Deep Learning",
+      "description": "AI-powered chatbot for tracking your pantry and providing recipe suggestions based on available ingredients.",
+      "image": "",
+      "tags": ["Deep Learning", "Computer Vision", "NLP", "PyTorch", "CLIP", "PostgreSQL", "SQL", "Flask"],
+      "type": "external",
+      "url": "https://cookingchatbot.vercel.app/",
+      "github": "https://github.com/groversomanshi/Cooking-Chatbot",
+      "status": "complete"
     }
   ]
 }

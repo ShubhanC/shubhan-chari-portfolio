@@ -170,7 +170,7 @@ function renderCard(proj) {
     if (proj.github) {
         actions += `
             <a href="${escapeHtml(proj.github)}" class="card-btn secondary" target="_blank" rel="noopener">
-                📂 Source
+                📂 Repo
             </a>
         `;
     }
