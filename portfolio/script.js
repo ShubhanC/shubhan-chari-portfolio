@@ -162,7 +162,7 @@ function renderCard(proj) {
         `;
     } else if (hasUrl || isLocal) {
         actions += `
-            <a href="${escapeHtml(proj.url)}" class="card-btn primary" target="${proj.type === 'external' ? '_blank' : '_self'}" rel="noopener">
+            <a href="${escapeHtml(proj.url)}" class="card-btn primary" target="_self" rel="noopener">
                 ${proj.type === 'internal' ? '🚀 Launch' : '🔗 Visit'}
             </a>
         `;

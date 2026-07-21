@@ -1,0 +1,17 @@
+name: Deploy Brain Tumor App to Streamlit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/brain-tumor-app/**'
+      - 'requirements.txt'
+      - '.github/workflows/streamlit-deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Streamlit Deploy Hook
+        run: |
+          curl -f -X POST "${{ secrets.STREAMLIT_DEPLOY_HOOK_URL }}"
