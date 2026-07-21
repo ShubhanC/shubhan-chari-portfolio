@@ -27,6 +27,8 @@ try:
 except ImportError:
     pass
 
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "..", "..")
+
 # ── Configuration ────────────────────────────────────────────────────────────
 HF_REPO = "schari/brain_tumor_classifier"
 HF_FILENAME = "tumor_detection.pth"
@@ -77,9 +79,7 @@ def load_model() -> nn.Module:
         st.sidebar.info(f"Model loaded from HuggingFace Hub: `{HF_REPO}`")
     except Exception as e:
         # Fallback: look for local model file
-        local_path = os.path.join(
-            os.path.dirname(__file__), "..", "ML", "Brain Tumor", "model", HF_FILENAME
-        )
+        local_path = os.path.join(ROOT_DIR, "ML", "Brain Tumor", "model", HF_FILENAME)
         if os.path.exists(local_path):
             model_path = local_path
             st.sidebar.warning("HF Hub download failed. Using local model weights.")
@@ -186,17 +186,13 @@ with st.expander("ℹ️ How it works"):
 # ── Example images ──
 with st.expander("📸 Example images (from test set)"):
     st.markdown("These are sample test images from the dataset. Try uploading one!")
-    example_dir = os.path.join(
-        os.path.dirname(__file__), "..", "ML", "Brain Tumor", "data", "test_jpg"
-    )
+    example_dir = os.path.join(ROOT_DIR, "ML", "Brain Tumor", "data", "test_jpg")
     # Find available examples per class from test_jpg (labels from metadata CSV)
     import csv
 
     examples = {}
     if os.path.isdir(example_dir):
-        meta_path = os.path.join(
-            os.path.dirname(__file__), "..", "ML", "Brain Tumor", "brain_tumor_metadata.csv"
-        )
+        meta_path = os.path.join(ROOT_DIR, "ML", "Brain Tumor", "brain_tumor_metadata.csv")
         label_lookup = {}
         if os.path.exists(meta_path):
             try:
@@ -273,11 +269,13 @@ if uploaded_file is not None:
 
     # Per-class bar chart
     st.markdown("**Per-class probabilities:**")
-    chart_data = {
+    import pandas as pd
+    chart_data = pd.DataFrame({
         "Class": CLASS_NAMES,
         "Probability": probs,
-    }
-    st.bar_chart(chart_data, x="Class", y="Probability", color=CLASS_COLORS)
+        "color": CLASS_COLORS,
+    })
+    st.bar_chart(chart_data, x="Class", y="Probability", color="color")
 
     # Grad-CAM overlay
     if GRADCAM_AVAILABLE:

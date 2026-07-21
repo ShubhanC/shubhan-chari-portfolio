@@ -6,7 +6,7 @@
     "bio": "Aspiring data scientist and machine learning engineer with a passion for building end-to-end ML solutions — from data preprocessing and model training to deployment. This portfolio showcases my journey through various DS/ML projects across classification, NLP, computer vision, and healthcare analytics.",
     "email": "shubhan.chari@gmail.com",
     "github": "https://github.com/ShubhanC",
-    "linkedin": "",
+    "linkedin": "https://linkedin.com/in/shubhanchari",
     "avatar": ""
   },
   "categories": [
@@ -14,7 +14,8 @@
     "NLP",
     "ML / Healthcare",
     "Computer Vision",
-    "Data Science"
+    "Data Science",
+    "Software Engineering"
   ],
   "projects": [
     {
@@ -24,8 +25,8 @@
       "description": "A ResNet50-based deep learning web app that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with ~95.9% accuracy. Built with PyTorch, fine-tuned via transfer learning, and deployed as an interactive Streamlit app.",
       "image": "",
       "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
-      "type": "internal",
-      "url": "",
+      "type": "iframe",
+      "url": "brain-tumor-app/app.py",
       "github": "https://github.com/ShubhanC/portfolio-ds-ml/tree/main/ML/Brain%20Tumor",
       "status": "complete"
     },

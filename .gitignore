@@ -220,3 +220,13 @@ __marimo__/
 **.pth
 
 **.DS_Store
+
+pixi.lock
+pixi.toml
+
+graphify-out/
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+.claude/
