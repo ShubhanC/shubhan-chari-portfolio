@@ -160,10 +160,6 @@ st.sidebar.markdown(f"**Model:** {model_name}")
 st.sidebar.markdown(f"**Device:** {DEVICE}")
 st.sidebar.markdown(f"**Classes:** {len(CLASS_NAMES)} — {', '.join(CLASS_NAMES)}")
 st.sidebar.markdown(f"**Accuracy:** ~95.9% (validation)")
-st.sidebar.markdown(
-    "[🔙 Back to Portfolio](https://shubhan-chari-portfolio.vercel.app)"
-)
-st.sidebar.divider()
 
 # Lazy load model — only when user uploads an image
 model = None

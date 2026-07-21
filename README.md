@@ -1,7 +1,7 @@
 # portfolio-ds-ml
 
 > A compendium of my data science, machine learning, and AI projects.
-> **🌐 [Visit the Portfolio Website](https://portfolio-ds-ml.vercel.app/)** *(deployed)*
+> **🌐 [Visit the Portfolio Website](https://shubhanchari.vercel.app/)** *(deployed)*
 
 ### Quick Links
 | Project | Type | Link |
