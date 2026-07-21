@@ -26,7 +26,7 @@
       "image": "",
       "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
       "type": "iframe",
-      "url": "http://localhost:8501",
+      "url": "https://schari-brain-tumor.streamlit.app/",
       "github": "https://github.com/ShubhanC/portfolio-ds-ml/tree/main/ML/Brain%20Tumor",
       "status": "complete"
     },
