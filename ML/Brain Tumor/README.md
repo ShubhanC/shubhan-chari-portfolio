@@ -6,12 +6,12 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Flask](https://img.shields.io/badge/Flask-Web%20App-000000?style=for-the-badge&logo=flask&logoColor=white)](https://example.org)
 [![ResNet50](https://img.shields.io/badge/ResNet50-Transfer%20Learning-blueviolet?style=for-the-badge)](https://pytorch.org/vision/stable/models/resnet.html)
-[![Accuracy](https://img.shields.io/badge/Accuracy-99.3%25-brightgreen?style=for-the-badge)](https://github.com/shsarv/Machine-Learning-Projects/tree/main/BRAIN%20TUMOR%20DETECTION%20%5BEND%202%20END%5D)
+[![Accuracy](https://img.shields.io/badge/Accuracy-95.9%25-brightgreen?style=for-the-badge)](https://github.com/shsarv/Machine-Learning-Projects/tree/main/BRAIN%20TUMOR%20DETECTION%20%5BEND%202%20END%5D)
 [![License](https://img.shields.io/badge/License-MIT-1abc9c?style=for-the-badge)](../LICENSE.md)
 
-> A full **end-to-end deep learning web application** that classifies brain tumors in MRI scans into three tumor types using a **fine-tuned ResNet50** via Transfer Learning — achieving **99.3% accuracy** — deployed as a live Flask web app.
+> A full **end-to-end (website in progress) deep learning web application** that classifies brain tumors in MRI scans into three tumor types using a **fine-tuned ResNet50** via Transfer Learning — achieving **95.9% accuracy** — deployed as a live Flask web app.
 
-[🔙 Back to Main Repository](https://github.com/shsarv/Machine-Learning-Projects)
+[🔙 Back to Main Repository](https://github.com/ShubhanC/portfolio-ds-ml)
 
 </div>
 
@@ -111,6 +111,8 @@ Each `.mat` file contains the following fields:
 | `cjdata.tumorBorder` | Coordinates of discrete points on the tumor border `[x1,y1,x2,y2,...]` |
 | `cjdata.tumorMask` | Binary image with `1s` marking the tumor region |
 
+The script to convert the `.mat` files into `.jpg` files is in `./notebooks/matlab_to_jpg.ipynb`
+
 ### Data Augmentation
 
 Custom real-time augmentations applied during training:
@@ -161,7 +163,7 @@ Input MRI Image (224 × 224 × 3)
 | Parameter | Value |
 |-----------|-------|
 | Base Model | ResNet50 (ImageNet pretrained) |
-| Strategy | Fine-tune fc and layer4 after warm-up |
+| Strategy | Fine-tune `fc` and `layer4` after warm-up of custom `fc` head|
 | Optimizer | Adam |
 | Learning Rate | 0.0001 (layer4), 0.0005 (head) |
 | LR Scheduler | StepLR (decay every 7 epochs) |
@@ -192,12 +194,12 @@ Input MRI Image (224 × 224 × 3)
 ```
 BRAIN TUMOR DETECTION [END 2 END]/
 │
-├── 📂 Dataset/
-│   ├── 📂 bt_images/                        # Converted MRI images (.jpg)
-│   ├── 📂 bt_mask/                          # Tumor mask images
-│   └── 📂 new_dataset/                      # Processed dataset with labels
+├── 📂 data/
+│   ├── 📂 test_jpg/                         # Converted MRI test images (.jpg)
+│   ├── 📂 test_mat/                         # Original .mat test files
+│   └── 📂 1512427/                          # Cross Validation Data and README for data
 │
-├── 📂 Model/
+├── 📂 model/
 │   └── brain_tumor_model.pt                 # Saved ResNet50 fine-tuned weights
 │
 ├── 📂 notebooks/

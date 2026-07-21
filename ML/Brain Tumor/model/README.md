@@ -1,1 +1,1 @@
-link: [here](https://huggingface.co/schari/brain_tumor_classifier/tree/main)
+Download link: [here](https://huggingface.co/schari/brain_tumor_classifier/tree/main)
