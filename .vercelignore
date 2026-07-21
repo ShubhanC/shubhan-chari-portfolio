@@ -1,0 +1,9 @@
+# ML data, models, test images — not needed for the static portfolio
+ML/
+pixi.lock
+pixi.toml
+.git/
+.graphify-out/
+Basic/Parkinsons/
+Basic/Fake News Detector/
+.pixi/
