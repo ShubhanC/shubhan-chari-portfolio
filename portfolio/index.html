@@ -37,6 +37,13 @@
         </div>
     </main>
 
+    <!-- App iframe overlay — shown when launching "internal" apps -->
+    <div id="app-overlay" class="app-overlay" style="display:none;">
+        <button id="close-app" class="close-app-btn" title="Close app">&times;</button>
+        <div class="app-title-bar" id="app-title-bar"></div>
+        <iframe id="app-iframe" src="" frameborder="0"></iframe>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p>Built with ❤️ by <span id="footer-name">Shubhan Chari</span></p>
