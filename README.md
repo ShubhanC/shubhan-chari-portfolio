@@ -1,5 +1,14 @@
 # portfolio-ds-ml
-A compendium of my data science, machine learning, and AI projects. Website will be there soon that will deploy , but for now there will be repo folders
+
+> A compendium of my data science, machine learning, and AI projects.
+> **🌐 [Visit the Portfolio Website](https://portfolio-ds-ml.vercel.app/)** *(deployed)*
+
+### Quick Links
+| Project | Type | Link |
+|---------|------|------|
+| 🧠 **Brain Tumor Classifier** | Live App | [Launch App](https://huggingface.co/spaces/schari/brain-tumor-classifier) · [Source](ML/Brain%20Tumor/) |
+| 📰 **Fake News Detector** | Live App | [Launch App](https://fake-news-detector-sc.vercel.app/) · [Source](https://github.com/ShubhanC/Fake-News-Detector) |
+| 🗣️ **Parkinson's Detection** | ML Model | [Source](Basic/Parkinsons/) |
 
 ### Data Science
 | Sr. No. | Project | Resource link | Completed | Link |

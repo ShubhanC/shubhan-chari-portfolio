@@ -1,0 +1,201 @@
+{
+  "profile": {
+    "name": "Shubhan Chari",
+    "title": "Data Science & Machine Learning Portfolio",
+    "tagline": "Transforming data into insights, one model at a time.",
+    "bio": "Aspiring data scientist and machine learning engineer with a passion for building end-to-end ML solutions — from data preprocessing and model training to deployment. This portfolio showcases my journey through various DS/ML projects across classification, NLP, computer vision, and healthcare analytics.",
+    "email": "shubhan.chari@gmail.com",
+    "github": "https://github.com/ShubhanC",
+    "linkedin": "",
+    "avatar": ""
+  },
+  "categories": [
+    "ML / Deep Learning",
+    "NLP",
+    "ML / Healthcare",
+    "Computer Vision",
+    "Data Science"
+  ],
+  "projects": [
+    {
+      "id": "brain-tumor-classifier",
+      "title": "Brain Tumor Classifier",
+      "category": "ML / Deep Learning",
+      "description": "A ResNet50-based deep learning web app that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with ~95.9% accuracy. Built with PyTorch, fine-tuned via transfer learning, and deployed as an interactive Streamlit app.",
+      "image": "",
+      "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
+      "type": "internal",
+      "url": "",
+      "github": "https://github.com/ShubhanC/portfolio-ds-ml/tree/main/ML/Brain%20Tumor",
+      "status": "complete"
+    },
+    {
+      "id": "fake-news-detector",
+      "title": "Fake News Detector",
+      "category": "NLP",
+      "description": "ML model trained to detect fake news articles and social media posts. Expanded from the original project to include social media text alongside article content. Deployed as a live web app.",
+      "image": "",
+      "tags": ["NLP", "Classification", "Vercel", "Scikit-learn"],
+      "type": "external",
+      "url": "https://fake-news-detector-sc.vercel.app/",
+      "github": "https://github.com/ShubhanC/Fake-News-Detector",
+      "status": "complete"
+    },
+    {
+      "id": "parkinsons-detection",
+      "title": "Parkinson's Disease Detection",
+      "category": "ML / Healthcare",
+      "description": "Gradient Boosting classifier (XGBoost) for detecting Parkinson's disease from vocal feature measurements. Uses GridSearch-optimized hyperparameters on UCI Parkinson's dataset with 22 vocal cord features.",
+      "image": "",
+      "tags": ["XGBoost", "Scikit-learn", "Classification", "Healthcare"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons",
+      "status": "complete"
+    },
+    {
+      "id": "sentiment-analysis",
+      "title": "Sentiment Analysis",
+      "category": "NLP",
+      "description": "Sentiment analysis on Amazon reviews and Twitter data using Naive Bayes classification and deep learning approaches.",
+      "image": "",
+      "tags": ["NLP", "Naive Bayes", "RNN", "LSTM"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "color-detection",
+      "title": "Color Detection",
+      "category": "Computer Vision",
+      "description": "OpenCV-based color detection project that identifies colors in images using color histograms and thresholding.",
+      "image": "",
+      "tags": ["OpenCV", "Computer Vision", "Python"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "iris-classification",
+      "title": "Iris Dataset Classification",
+      "category": "Data Science",
+      "description": "Logistic regression model to predict Iris flower species based on sepal and petal measurements.",
+      "image": "",
+      "tags": ["Logistic Regression", "Scikit-learn", "Classification"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "loan-prediction",
+      "title": "Loan Approval Predictor",
+      "category": "Data Science",
+      "description": "Predict whether a loan application will be approved using various ML classifiers on financial data.",
+      "image": "",
+      "tags": ["Classification", "Feature Engineering", "Scikit-learn"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "bigmart-sales",
+      "title": "BigMart Sales Prediction",
+      "category": "Data Science",
+      "description": "Predict sales for BigMart stores using regression models on historical transaction and store-level data.",
+      "image": "",
+      "tags": ["Regression", "Feature Engineering", "EDA"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "house-price-regression",
+      "title": "House Price Regression",
+      "category": "Data Science",
+      "description": "Advanced regression techniques to predict house prices using the Kaggle Ames Housing dataset.",
+      "image": "",
+      "tags": ["Regression", "Feature Selection", "Kaggle"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "wine-quality",
+      "title": "Wine Quality Predictor",
+      "category": "Data Science",
+      "description": "Predict wine quality scores based on physicochemical properties using classification and regression models.",
+      "image": "",
+      "tags": ["Classification", "Regression", "EDA"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "titanic-survival",
+      "title": "Titanic Survival Prediction",
+      "category": "Data Science",
+      "description": "Comprehensive data science pipeline predicting Titanic passenger survival using ensemble methods and feature engineering.",
+      "image": "",
+      "tags": ["Ensemble", "Feature Engineering", "Kaggle", "Classification"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "credit-card-fraud",
+      "title": "Credit Card Fraud Detection",
+      "category": "ML / Deep Learning",
+      "description": "Detect fraudulent credit card transactions using anomaly detection and classification on highly imbalanced data.",
+      "image": "",
+      "tags": ["Anomaly Detection", "Imbalanced Data", "Classification"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "recommendation-system",
+      "title": "Movie Recommendation System",
+      "category": "ML / Deep Learning",
+      "description": "Content-based and collaborative filtering recommendation engine for movies using matrix factorization and neighborhood methods.",
+      "image": "",
+      "tags": ["Recommender System", "Collaborative Filtering", "Matrix Factorization"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "customer-segmentation",
+      "title": "Customer Segmentation",
+      "category": "Data Science",
+      "description": "RFM-based customer segmentation using K-Means clustering to identify distinct customer groups for targeted marketing.",
+      "image": "",
+      "tags": ["Clustering", "K-Means", "RFM", "Marketing Analytics"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    },
+    {
+      "id": "breast-cancer-classification",
+      "title": "Breast Cancer Classification",
+      "category": "ML / Healthcare",
+      "description": "Deep learning model for breast cancer classification using Keras and medical imaging data.",
+      "image": "",
+      "tags": ["Deep Learning", "Keras", "Medical Imaging", "Classification"],
+      "type": "external",
+      "url": "",
+      "github": "",
+      "status": "planned"
+    }
+  ]
+}

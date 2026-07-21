@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhan Chari — Data Science & ML Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="avatar" id="avatar-placeholder">SC</div>
+                <h1 id="profile-name">Shubhan Chari</h1>
+                <p class="tagline" id="profile-tagline">Data Science & Machine Learning Portfolio</p>
+                <p class="bio" id="profile-bio">Transforming data into insights, one model at a time.</p>
+                <div class="social-links">
+                    <a href="#" id="link-github" class="social-btn" target="_blank" rel="noopener">GitHub</a>
+                    <a href="#" id="link-linkedin" class="social-btn" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="#" id="link-email" class="social-btn">Email</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="complete">Complete</button>
+            <button class="filter-btn" data-filter="planned">Planned</button>
+        </nav>
+
+        <div id="portfolio-grid" class="portfolio-grid">
+            <div class="loading">Loading projects...</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Built with ❤️ by <span id="footer-name">Shubhan Chari</span></p>
+            <p id="footer-year"></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
