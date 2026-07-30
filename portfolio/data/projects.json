@@ -1,0 +1,161 @@
+{
+  "profile": {
+    "name": "Shubhan Chari",
+    "tagline": "Transforming data into insights, one model at a time.",
+    "email": "shubhan.chari@gmail.com",
+    "github": "https://github.com/ShubhanC",
+    "linkedin": "https://linkedin.com/in/shubhanchari"
+  },
+  "projects": [
+    {
+      "id": "brain-tumor-classifier",
+      "title": "Brain Tumor Classifier",
+      "category": "ML/AI",
+      "folder": "personal",
+      "description": "A ResNet50-based deep learning web app that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with ~95.9% accuracy. Built with PyTorch, fine-tuned via transfer learning, and deployed as an interactive Streamlit app.",
+      "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
+      "type": "iframe",
+      "url": "https://schari-brain-tumor.streamlit.app/",
+      "github": "https://github.com/ShubhanC/brain-tumor-classifier",
+      "status": "complete",
+      "icon": "icons/brain-tumor.svg"
+    },
+    {
+      "id": "fake-news-detector",
+      "title": "Fake News Detector",
+      "category": "ML/AI",
+      "folder": "personal",
+      "description": "ML model trained to detect fake news articles and social media posts. Expanded from the original project to include social media text alongside article content. Deployed as a live web app.",
+      "tags": ["NLP", "Classification", "Vercel", "Scikit-learn"],
+      "type": "external",
+      "url": "https://fake-news-detector-sc.vercel.app/",
+      "github": "https://github.com/ShubhanC/Fake-News-Detector",
+      "status": "complete",
+      "icon": "icons/fake-news.svg"
+    },
+    {
+      "id": "parkinsons-detection",
+      "title": "Parkinson's Disease Detection",
+      "category": "ML/AI",
+      "folder": "coursework",
+      "description": "Gradient Boosting classifier (XGBoost) for detecting Parkinson's disease from vocal feature measurements. Uses GridSearch-optimized hyperparameters on UCI Parkinson's dataset with 22 vocal cord features.",
+      "tags": ["XGBoost", "Scikit-learn", "Classification", "Healthcare"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons",
+      "status": "complete",
+      "icon": "icons/parkinsons.svg"
+    },
+    {
+      "id": "uiuc-study-spots",
+      "title": "UIUC Study Spots",
+      "category": "Data Science/Stats",
+      "folder": "personal",
+      "description": "Interactive map for finding study spaces on the UIUC campus.",
+      "tags": ["Statistical Modeling", "Web Development", "Mapping", "UIUC"],
+      "type": "external",
+      "url": "https://uiuc-study-spots.vercel.app/",
+      "github": "https://github.com/ShubhanC/uiuc-study-spots",
+      "status": "complete",
+      "icon": "icons/uiuc-study-spots.svg"
+    },
+    {
+      "id": "cooking-chatbot",
+      "title": "Cooking Chatbot",
+      "category": "ML/AI",
+      "folder": "personal",
+      "description": "AI-powered chatbot for tracking your pantry and providing recipe suggestions based on available ingredients.",
+      "tags": ["Deep Learning", "Computer Vision", "NLP", "PyTorch", "CLIP", "PostgreSQL", "SQL", "Flask"],
+      "type": "external",
+      "url": "https://cookingchatbot.vercel.app/",
+      "github": "https://github.com/groversomanshi/Cooking-Chatbot",
+      "status": "complete",
+      "icon": "icons/cooking-chatbot.svg"
+    },
+    {
+      "id": "musichead",
+      "title": "Musichead",
+      "category": "Software Engineering",
+      "folder": "personal",
+      "description": "Web app to discover music similar to your favorites and compare songs across musical attributes.",
+      "tags": ["React", "Node.js", "API Integration", "Audio Analysis"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/Musichead",
+      "status": "in-progress",
+      "icon": "icons/musichead.png"
+    },
+    {
+      "id": "freellmapi-throttler",
+      "title": "FreeLLM API Throttler",
+      "category": "Software Engineering",
+      "folder": "open-source",
+      "description": "Fixed an issue where RPM limits were being reached too quickly, developed a throttler to slow request rates from LLM to agents.",
+      "tags": ["React", "Node.js", "API Integration"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/freellmapi",
+      "status": "complete",
+      "icon": "icons/freellmapi.svg"
+    },
+    {
+      "id": "mfprl",
+      "title": "MFPRL - Mobility & Fall Prevention Research Lab",
+      "category": "ML/AI",
+      "folder": "research",
+      "description": "Building a predictive model to identify Parkinson's disease in patients using signal data from wearable devices. Built the data preprocessing pipeline that goes from raw sensor files to cleaned datasets for modeling. Part of a research collaboration with the Mobility and Fall Prevention Research Lab at UIUC.",
+      "tags": ["Data Science", "Machine Learning", "Signal Processing", "Healthcare"],
+      "type": "external",
+      "url": "https://mfp.hk.illinois.edu/",
+      "github": "",
+      "status": "complete",
+      "icon": "icons/mfprl.svg"
+    },
+    {
+      "id": "fertility-decline",
+      "title": "Global Fertility Decline Analysis - IS 312",
+      "category": "Data Science/Stats",
+      "folder": "coursework",
+      "description": "Analyzed global fertility decline using data from the World Bank and UN. Developed Panel Data analysis methods (Fixed Effects, Between Effects) using log-transformation and VIF to achieve high statistical significance.",
+      "tags": ["Panel Data Analysis", "Statistical Modeling", "Data Visualization"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/income-vs-birthrate-is312",
+      "status": "complete",
+      "icon": "icons/fertility-decline.svg"
+    },
+    {
+      "id": "datathon-2026",
+      "title": "Illinois Statistics Datathon 2026",
+      "category": "Data Science/Stats",
+      "folder": "coursework",
+      "description": "Participated in the Illinois Statistics Datathon 2026, where we predicted call center call volumes for four companies using historical data. Developed a 2-tiered predictive model with XGBoost regressors and Historical Intraday Profiling in order to predict August 2026 call volumes. The model achieved a strong predictive accuracy across all four portfolios, particularly for Call Volume and CCT, with Mean Absolute Percentage Errors (MAPE), ranging from 9.5% and 11.5% for volume and 1.9% to 2.6% for handling times.",
+      "tags": ["XGBoost", "Regression", "Time Series Forecasting", "Data Science"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/Datathon-2026-SNACs",
+      "status": "complete",
+      "icon": "icons/datathon-2026.svg"
+    },
+    {
+      "id": "datathon-2025",
+      "title": "Illinois Statistics Datathon 2025",
+      "category": "Data Science/Stats",
+      "folder": "coursework",
+      "description": "Participated in the Illinois Statistics Datathon 2025, where we predicted Q4 consumer spending and determined credit line increases for consumers. Developed a regression model to predict Q4 spending numbers using 3 years of spending data. Determined credit line increases for consumers based on predicted spending and user risk patterns.",
+      "tags": ["Regression", "Data Science", "Predictive Modeling"],
+      "type": "external",
+      "url": "",
+      "github": "https://github.com/ShubhanC/datathon-2025-ISBS",
+      "status": "complete",
+      "icon": "icons/datathon-2025.svg"
+    },
+    {
+      "id": "discord-wiki",
+      "title": "Discord Wiki",
+      "category": "Software Engineering",
+      "folder": "personal",
+      "description": "Gathers, organizes, and summarizes information from Discord chat logs into consice summary pages. "
+    }
+  ]
+}
