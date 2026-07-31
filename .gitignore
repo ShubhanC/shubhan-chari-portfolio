@@ -233,3 +233,7 @@ graphify-out/
 
 .vercel
 .env*
+
+Portfolio-org-spec.md
+old-site-backup/
+index.html.bak

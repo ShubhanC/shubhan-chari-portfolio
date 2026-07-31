@@ -15,7 +15,7 @@
       "description": "A ResNet50-based deep learning web app that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with ~95.9% accuracy. Built with PyTorch, fine-tuned via transfer learning, and deployed as an interactive Streamlit app.",
       "tags": ["PyTorch", "ResNet50", "Transfer Learning", "Medical Imaging", "Streamlit"],
       "type": "iframe",
-      "url": "https://schari-brain-tumor.streamlit.app/",
+      "url": "https://sc-brain-tumor.streamlit.app/",
       "github": "https://github.com/ShubhanC/brain-tumor-classifier",
       "status": "complete",
       "icon": "icons/brain-tumor.svg"

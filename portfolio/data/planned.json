@@ -1,0 +1,88 @@
+{
+  "planned": [
+    {
+      "id": "sentiment-analysis",
+      "title": "Sentiment Analysis",
+      "description": "Sentiment analysis on Amazon reviews and Twitter data using Naive Bayes classification and deep learning approaches.",
+      "tags": ["NLP", "Naive Bayes", "RNN", "LSTM"],
+      "status": "planned"
+    },
+    {
+      "id": "color-detection",
+      "title": "Color Detection",
+      "description": "OpenCV-based color detection project that identifies colors in images using color histograms and thresholding.",
+      "tags": ["OpenCV", "Computer Vision", "Python"],
+      "status": "planned"
+    },
+    {
+      "id": "iris-classification",
+      "title": "Iris Dataset Classification",
+      "description": "Logistic regression model to predict Iris flower species based on sepal and petal measurements.",
+      "tags": ["Logistic Regression", "Scikit-learn", "Classification"],
+      "status": "planned"
+    },
+    {
+      "id": "loan-prediction",
+      "title": "Loan Approval Predictor",
+      "description": "Predict whether a loan application will be approved using various ML classifiers on financial data.",
+      "tags": ["Classification", "Feature Engineering", "Scikit-learn"],
+      "status": "planned"
+    },
+    {
+      "id": "bigmart-sales",
+      "title": "BigMart Sales Prediction",
+      "description": "Predict sales for BigMart stores using regression models on historical transaction and store-level data.",
+      "tags": ["Regression", "Feature Engineering", "EDA"],
+      "status": "planned"
+    },
+    {
+      "id": "house-price-regression",
+      "title": "House Price Regression",
+      "description": "Advanced regression techniques to predict house prices using the Kaggle Ames Housing dataset.",
+      "tags": ["Regression", "Feature Selection", "Kaggle"],
+      "status": "planned"
+    },
+    {
+      "id": "wine-quality",
+      "title": "Wine Quality Predictor",
+      "description": "Predict wine quality scores based on physicochemical properties using classification and regression models.",
+      "tags": ["Classification", "Regression", "EDA"],
+      "status": "planned"
+    },
+    {
+      "id": "titanic-survival",
+      "title": "Titanic Survival Prediction",
+      "description": "Comprehensive data science pipeline predicting Titanic passenger survival using ensemble methods and feature engineering.",
+      "tags": ["Ensemble", "Feature Engineering", "Kaggle", "Classification"],
+      "status": "planned"
+    },
+    {
+      "id": "credit-card-fraud",
+      "title": "Credit Card Fraud Detection",
+      "description": "Detect fraudulent credit card transactions using anomaly detection and classification on highly imbalanced data.",
+      "tags": ["Anomaly Detection", "Imbalanced Data", "Classification"],
+      "status": "planned"
+    },
+    {
+      "id": "recommendation-system",
+      "title": "Movie Recommendation System",
+      "description": "Content-based and collaborative filtering recommendation engine for movies using matrix factorization and neighborhood methods.",
+      "tags": ["Recommender System", "Collaborative Filtering", "Matrix Factorization"],
+      "status": "planned"
+    },
+    {
+      "id": "customer-segmentation",
+      "title": "Customer Segmentation",
+      "description": "RFM-based customer segmentation using K-Means clustering to identify distinct customer groups for targeted marketing.",
+      "tags": ["Clustering", "K-Means", "RFM", "Marketing Analytics"],
+      "status": "planned"
+    },
+    {
+      "id": "breast-cancer-classification",
+      "title": "Breast Cancer Classification",
+      "description": "Deep learning model for breast cancer classification using Keras and medical imaging data.",
+      "tags": ["Deep Learning", "Keras", "Medical Imaging", "Classification"],
+      "status": "planned"
+    }
+  ]
+}

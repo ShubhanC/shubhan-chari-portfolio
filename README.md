@@ -6,7 +6,7 @@
 ### Quick Links
 | Project | Type | Link |
 |---------|------|------|
-| 🧠 **Brain Tumor Classifier** | Live App | [Launch App](https://huggingface.co/spaces/schari/brain-tumor-classifier) · [Source](ML/Brain%20Tumor/) |
+| 🧠 **Brain Tumor Classifier** | Live App | [Launch App](https://sc-brain-tumor.streamlit.app) · [Source](ML/Brain%20Tumor/) |
 | 📰 **Fake News Detector** | Live App | [Launch App](https://fake-news-detector-sc.vercel.app/) · [Source](https://github.com/ShubhanC/Fake-News-Detector) |
 | 🗣️ **Parkinson's Detection** | ML Model | [Source](Basic/Parkinsons/) |
 
