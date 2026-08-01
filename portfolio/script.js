@@ -486,9 +486,9 @@ function renderNotes() {
   html += '</div>';
   html += '<div class="detail-content">';
   html += '<div style="font-family: var(--font-notes); font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.9);">';
-  html += 'Hi! I\'m Shubhan, an aspiring data scientist and ML engineer.<br><br>';
-  html += 'I love building cool projects with data and AI.<br><br>';
-  html += 'Feel free to check out my work above — each folder represents a category of projects I\'ve worked on.';
+  html += 'Hi! I\'m Shubhan, a Statistics & Computer Science student at the University of Illinois.<br><br>';
+  html += 'My main professional interests are in data science and machine learning, but I also enjoy graphic design, listening to music, and more!<br><br>';
+  html += 'Feel free to check out my work above or any of the other folders. Each folder represents a category of projects I\'ve worked on. I also have other apps that are more about me, so have fun exploring those!<br><br>';
   html += '</div>';
   html += '</div></div>';
 
