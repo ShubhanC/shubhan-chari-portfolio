@@ -1,57 +1,111 @@
-# portfolio-ds-ml
+# Shubhan Chari — Portfolio
 
-> A compendium of my data science, machine learning, and AI projects.
-> **🌐 [Visit the Portfolio Website](https://shubhanchari.vercel.app/)** *(deployed)*
+Welcome to my portfolio! I am a **Statistics and Computer Science** student at the **University of Illinois Urbana-Champaign (UIUC)**, with minors in **Data Science** and **Economics (Econometrics Track)**.
 
-### Quick Links
-| Project | Type | Link |
-|---------|------|------|
-| 🧠 **Brain Tumor Classifier** | Live App | [Launch App](https://sc-brain-tumor.streamlit.app) · [Source](ML/Brain%20Tumor/) |
-| 📰 **Fake News Detector** | Live App | [Launch App](https://fake-news-detector-sc.vercel.app/) · [Source](https://github.com/ShubhanC/Fake-News-Detector) |
-| 🗣️ **Parkinson's Detection** | ML Model | [Source](Basic/Parkinsons/) |
+This repository serves as a centralized hub for my data science, machine learning, deep learning, software engineering, and research projects.
 
-### Data Science
-| Sr. No. | Project | Resource link | Completed | Link |
-| ------- | ------- | ------------- | --------- | --------- |
-| | **BASIC** | | | |
-| 1 | Sentiment Analysis | <ol><li> [Amazon reviews dataset](https://www.kaggle.com/anshulrai/cudnnlstm-implementation-93-7-accuracy) </li><li>[Amazon reviews dataset](https://www.kaggle.com/muonneutrino/sentiment-analysis-with-amazon-reviews)</li><li>[Twitter Sentiment analysis - Medium](https://towardsdatascience.com/creating-the-twitter-sentiment-analysis-program-in-python-with-naive-bayes-classification-672e5589a7ed)</li><li>[Twitter Sentiment analysis - analytics vidhya](https://www.analyticsvidhya.com/blog/2018/07/hands-on-sentiment-analysis-dataset-python/)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 2 | Fake News detection | [Detecting Fake News](https://data-flair.training/blogs/advanced-python-project-detecting-fake-news/) | [x] | [Repo](https://github.com/ShubhanC/Fake-News-Detector)<br>[Website](https://fake-news-detector-sc.vercel.app/) |
-| 3 | Detecting Parkinsons's Disease | <ol><li>[Disease detection using XGBoost](https://data-flair.training/blogs/python-machine-learning-project-detecting-parkinson-disease/)</li><li>[pyimagesearch - Detecting Parkinsons's Disease](https://www.pyimagesearch.com/2019/04/29/detecting-parkinsons-disease-with-opencv-computer-vision-and-the-spiral-wave-test/)</li> | <ol><li>[x]</li><li>[ ]</li></ol> | - |
-| 4 | Color Detection | [OpenCV Project](https://data-flair.training/blogs/project-in-python-colour-detection/) | [ ] | - |
-| 5 | Iris Data Set - Predict the class of the flower | [many - analytics vidhya](https://repl.it/@LakshayArora1/Iris-Dataset-Logistic-Regression) | [ ] | - |
-| 6 | Loan Prediction - Predict if a loan will get approved or not. | [many - analytics vidhya](https://repl.it/@LakshayArora1/Logistic-Regression-Loan-Dataset) | [ ] | - |
-| 7 | BigMart Sales Dataset - Predict the sales of a store. | [many - analytics vidhya](https://repl.it/@LakshayArora1/Linear-Regression) | [ ] | - |
-| 8 | House Price Regression | [kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/notebooks) | [ ] | - |
-| 9 | Wine quality - Predict the quality of the wine. | [Kaggle kernel](https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009/kernels) | [ ] | - |
-| 10 | Heights and Weights Dataset - Predict the height or weight of a person | [Study of height versus weight](https://www3.nd.edu/~steve/computing_with_data/2_Motivation/motivate_ht_wt.html) | [ ] | - |
-| 11 | Email Classification | [youtube](https://www.youtube.com/watch?v=exHwwy9kVcg) | [ ] | - |
-| 12 | Titanic dataset | <ol><li>[Comprehensive data exploration with Python- Kaggle](https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python)</li><li>[Titanic Data Science Solutions - Kaggle](https://www.kaggle.com/startupsci/titanic-data-science-solutions)</li><li>[Data ScienceTutorial for Beginners - Kaggle](https://www.kaggle.com/kanncaa1/data-sciencetutorial-for-beginners)</li><li>[Introduction to Ensembling/Stacking in Python - Kaggle](https://www.kaggle.com/arthurtok/introduction-to-ensembling-stacking-in-python)</li><li>[A Data Science Framework: To Achieve 99% Accuracy - Kaggle](https://www.kaggle.com/ldfreeman3/a-data-science-framework-to-achieve-99-accuracy)</li><li>[Stacked Regressions : Top 4% on LeaderBoard - Kaggle](https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard)</li><li>[An Interactive Data Science Tutorial - Kaggle](https://www.kaggle.com/helgejo/an-interactive-data-science-tutorial)</li><li>[EDA To Prediction(DieTanic) - Kaggle](https://www.kaggle.com/ash316/eda-to-prediction-dietanic)</li><li>[Titanic: Machine Learning from Disaster - Kaggle](https://www.kaggle.com/c/titanic)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| | **Intermediate** | | | |
-| 1 | Speech Emotion Recognition | [Speech Emotion Recognition with librosa](https://data-flair.training/blogs/python-mini-project-speech-emotion-recognition/) | [ ] | - |
-| 2 | Gender and Age Detection | <ol><li>[pyimagesearch - Age Detection with deep learning](https://www.pyimagesearch.com/2020/04/13/opencv-age-detection-with-deep-learning/)</li><li>[learnopencv - Gender & Age Classification using OpenCV Deep Learning](https://www.learnopencv.com/age-gender-classification-using-opencv-deep-learning-c-python/)</li><li>[DataFlair - Gender and Age Detection with OpenCV](https://data-flair.training/blogs/python-project-gender-age-detection/)</li><li>[analytics vidhya - Age Detection](https://www.analyticsvidhya.com/blog/2017/06/hands-on-with-deep-learning-solution-for-age-detection-practice-problem/)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 3 | Driver Drowsiness detection | <ol></li><li>[Real-time facial landmark detection](https://www.pyimagesearch.com/2017/04/17/real-time-facial-landmark-detection-opencv-python-dlib/)</li><li>[Eye blink detection](https://www.pyimagesearch.com/2017/04/24/eye-blink-detection-opencv-python-dlib/)</li><li>[Drowsiness detection with OpenCV](https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/)<li>[DataFlair - System with OpenCV & Keras](https://data-flair.training/blogs/python-project-driver-drowsiness-detection-system/)</li></li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li></li><li>[ ]</li> </ol> | - |
-| 4 | Basic Chatbot | [chatbot using NLTK & Keras](https://data-flair.training/blogs/python-chatbot-project/) | [ ] | - |
-| 5 | Handwritten Digit Recognition | <ol><li>[Handwritten Digit Recognition](https://data-flair.training/blogs/python-deep-learning-project-handwritten-digit-recognition/)</li><li>[kaggle - Digit Recognition-Tutorial (CNN)](https://www.kaggle.com/tarunkr/digit-recognition-tutorial-cnn-99-67-accuracy)</li></ol> | <ol><li>[ ]</li><li>[ ]</li></ol> | - |
-| 6 | Black Friday Dataset - Predict purchase amount. | [github](https://github.com/rouseguy/BlackFridayDataHack) | [ ] | - |
-| 7 | Trip History Dataset - Predict the class of user. | [analytics vidhya](https://www.analyticsvidhya.com/blog/2015/06/solution-kaggle-competition-bike-sharing-demand/) | [ ] | - |
-| 8 | Song recommendation | <ol><li>[Medium - Simple song recommender system](https://towardsdatascience.com/how-to-build-a-simple-song-recommender-296fcbc8c85)</li><li>[Medium - A Simple Song Recommender System in Python](https://towardsdatascience.com/a-simple-song-recommender-system-in-python-tutorial-3e4c111198d6)</li><li>[analytics vidhya - Guide to song recommendation system](https://analyticsindiamag.com/beginners-guide-to-building-a-song-recommender-in-python/)</li><li>[Youtube - Building Recommender Systems Using Python](https://www.youtube.com/watch?v=39vJRxIPSxw)</li><li>[Youtube - Music Search and Recommendation from Millions of Songs](https://www.youtube.com/watch?v=RIW7jjurpPI)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 9 | Handwritten Text Recognition | [Build a Handwritten Text Recognition System using TensorFlow](https://towardsdatascience.com/build-a-handwritten-text-recognition-system-using-tensorflow-2326a3487cd5) | [ ] | - |
-| 10 | Sentiment analysis - IMDB movie review dataset | [tensorflow](https://www.tensorflow.org/tutorials/text/text_classification_rnn) | [ ] | - |
-| 11 | Text generation - Shakespeare | [tensorflow](https://www.tensorflow.org/tutorials/text/text_generation) | [ ] | - |
-| 12 | Sign language MNIST classification | <ol><li>[kaggle - Deep learning using sign langugage](https://www.kaggle.com/ranjeetjain3/deep-learning-using-sign-langugage#CNN-Model)</li><li>[kaggle - CNN using Keras](https://www.kaggle.com/madz2000/cnn-using-keras-99-7-accuracy)</li></ol> | <ol><li>[ ]</li><li>[ ]</li></ol> | - |
-| | **Advanced** | | | |
-| 1 | Image Captioning | [Image Captioning with visual Attention](https://www.tensorflow.org/tutorials/text/image_captioning) | [ ] | - |
-| 2 | Credit Card Fraud Detection | <ol><li>[geeksforgeeks - Credit Card Fraud Detection](https://www.geeksforgeeks.org/ml-credit-card-fraud-detection/)</li><li>[Kaggel kernels](https://www.kaggle.com/mlg-ulb/creditcardfraud/kernels)</li><li>[Google search results](https://www.google.com/search?q=Credit+Card+Fraud+Detection&rlz=1C1CHBF_enIN820IN820&oq=Credit+Card+Fraud+Detection&aqs=chrome..69i57j69i60&sourceid=chrome&ie=UTF-8)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 3 | Recommendation System | <ol><li>[Recommendation Systems](https://engmrk.com/module-18-machine-learning-based-recommendation-systems/?utm_campaign=News&utm_medium=Community&utm_source=DataCamp.com)</li><li>[RECOMMENDATION SYSTEM](https://technotipsondatascience.wordpress.com/2018/10/22/recommendation-system/)</li><li>[Medium - Movie recommendation](https://towardsdatascience.com/movie-recommender-system-part-1-7f126d2f90e2)</li><li>[kaggel - Movies Recommender System](https://www.kaggle.com/rounakbanik/movie-recommender-systems)</li><li>[Quick Guide to Build a Recommendation Engine in Python & R](https://www.analyticsvidhya.com/blog/2016/06/quick-guide-build-recommendation-engine-python/)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 4 | Customer Segmentation | <ol><li>[Customer Segmentation by RFM clustering](https://towardsdatascience.com/data-driven-growth-with-python-part-2-customer-segmentation-5c019d150444)</li><li>[kaggle - Customer Segmentation](https://www.kaggle.com/fabiendaniel/customer-segmentation)</li><li>[Customer Segmentation by KMeans](https://towardsdatascience.com/customer-segmentation-with-machine-learning-a0ac8c3d4d84)</li><li>[KDnuggets - Beginner’s Guide to Customer Segmentation](https://www.kdnuggets.com/2017/03/yhat-beginner-guide-customer-segmentation.html)</li><li>[KDnuggets - Customer Segmentation Using K Means Clustering](https://www.kdnuggets.com/2019/11/customer-segmentation-using-k-means-clustering.html)</li><li>[Customer Segmentation: A Technical Guide](https://www.mktr.ai/applications-and-methods-in-data-science-customer-segmentation/)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 5 | Breast Cancer Classification | <ol><li>[pyimagesearch - Breast cancer classification with Keras and Deep Learning](https://www.pyimagesearch.com/2019/02/18/breast-cancer-classification-with-keras-and-deep-learning/)</li><li>[Dataflair - Breast Cancer Classification](https://data-flair.training/blogs/project-in-python-breast-cancer-classification/)</li></ol> | <ol><li>[ ]</li><li>[ ]</li></ol> | - |
-| 6 | Traffic Signs Recognition | [pyimagesearch - Traffic Sign Classification with Keras and Deep Learning](https://www.pyimagesearch.com/2019/11/04/traffic-sign-classification-with-keras-and-deep-learning/) | [ ] | - |
-| 7 | Urban Sound Classification | [Audio Data Analysis using Deep Learning](https://www.analyticsvidhya.com/blog/2017/08/audio-voice-processing-deep-learning/) | [ ] | - |
-| 8 | Human Activity Recognition | <ol><li>[MLM - Deep Learning Models for Human Activity Recognition](https://machinelearningmastery.com/deep-learning-models-for-human-activity-recognition/)</li><li>[Human Activity Recognition with OpenCV and Deep Learning](https://www.pyimagesearch.com/2019/11/25/human-activity-recognition-with-opencv-and-deep-learning/)</ol> | <ol><li>[ ]</li><li>[ ]</li></ol> | - |
-| 9 | Covid-19 | <ol><li>[pyimagesearch - Covid-19 in X-ray images](https://www.pyimagesearch.com/2020/03/16/detecting-covid-19-in-x-ray-images-with-keras-tensorflow-and-deep-learning/)</li><li>[pyimagesearch - Mask detection](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)</li><li>[rubiks-code Detection of COVID-19 in chest X-Rays with Deep Learning](https://rubikscode.net/2020/03/23/detection-of-covid-19-in-chest-x-rays-with-deep-learning/)</li></ol> | <ol><li>[ ]</li><li>[ ]</li><li>[ ]</li></ol> | - |
-| 10 | Video classification | [pyimagesearch](https://www.pyimagesearch.com/2019/07/15/video-classification-with-keras-and-deep-learning/) | [ ] | - |
-| 11 | Fire and smoke detection | [pyimagesearch](https://www.pyimagesearch.com/2019/11/18/fire-and-smoke-detection-with-keras-and-deep-learning/) | [ ] | - |
-| 12 | Detecting Natural Disasters | [pyimagesearch](https://www.pyimagesearch.com/2019/11/11/detecting-natural-disasters-with-keras-and-deep-learning/) | [ ] | - |
-| 13 | Anonymizing faces | [pyimagesearch](https://www.pyimagesearch.com/2020/04/06/blur-and-anonymize-faces-with-opencv-and-python/) | [ ] | - |
-| 14 | Text Summarization | [list of links](https://www.one-tab.com/page/at7XZn6iRsKSgpgNAqK0dw) | [ ] | - |
-| 15 | Deep Dream and Style Transfer | [list of links](https://www.one-tab.com/page/RYc4BqXSRWOE_A1GIUAPYA) | [ ] | - |
+🌐 **[Visit the Live Portfolio Website](https://shubhanchari.vercel.app/)** — *A custom, interactive iOS/phone mockup interface designed and built with clean HTML, CSS, JavaScript, and squircle corner-smoothing.*
+
+---
+
+## 📱 About the Portfolio Site
+
+The portfolio website is a unique, fully interactive web experience that simulates a mobile OS. Visitors can click/tap to unlock the device, browse "apps" representing different project categories (folders), open utility apps like Spotify and Camera, view a custom Notes and Contacts app, and access details of all my projects.
+
+*   **Path**: `portfolio/`
+*   **Tech Stack**: Vanilla HTML5, CSS3 (using custom properties and CSS Grid), Modern ES6+ JavaScript, `corner-smoothing` squircle observer, and Motion library for transitions.
+*   **Data Source**: Driven dynamically by `portfolio/data/projects.json`.
+
+---
+
+## 🚀 Projects Overview
+
+My projects are organized into folders reflecting their context (Personal, Research, Open Source, and Coursework).
+
+### 🧠 Personal Projects
+
+#### 1. [Brain Tumor Classifier](https://github.com/ShubhanC/brain-tumor-classifier)
+*   **Description**: A ResNet50-based deep learning application that classifies brain tumor MRI scans into Glioma, Meningioma, or Pituitary tumors with **~95.9% accuracy**. Fine-tuned using PyTorch transfer learning and wrapped in an interactive user interface.
+*   **Tech Stack**: PyTorch, ResNet50, Transfer Learning, OpenCV, Streamlit
+*   **Links**: [Live App](https://sc-brain-tumor.streamlit.app/) | [GitHub Repo](https://github.com/ShubhanC/brain-tumor-classifier)
+
+#### 2. [Fake News Detector](https://github.com/ShubhanC/Fake-News-Detector)
+*   **Description**: An NLP-powered machine learning classifier trained to detect fake news articles and social media posts. The pipeline handles text normalization, feature extraction, and predictions.
+*   **Tech Stack**: Python, NLP, Scikit-learn, Vercel
+*   **Links**: [Live App](https://fake-news-detector-sc.vercel.app/) | [GitHub Repo](https://github.com/ShubhanC/Fake-News-Detector)
+
+#### 3. [UIUC Study Spots](https://github.com/ShubhanC/uiuc-study-spots)
+*   **Description**: An interactive mapping application designed for UIUC students to locate and filter ideal study spaces across campus based on statistical occupancy and features.
+*   **Tech Stack**: Statistical Modeling, Leaflet/Mapping, Web Development
+*   **Links**: [Live App](https://uiuc-study-spots.vercel.app/) | [GitHub Repo](https://github.com/ShubhanC/uiuc-study-spots)
+
+#### 4. [Cooking Chatbot](https://github.com/groversomanshi/Cooking-Chatbot)
+*   **Description**: An AI-powered recipe and pantry management assistant. Uses computer vision to identify ingredients in your pantry and suggests recipes dynamically.
+*   **Tech Stack**: PyTorch, CLIP, NLP, OpenCV, PostgreSQL, SQL, Flask
+*   **Links**: [Live App](https://cookingchatbot.vercel.app/) | [GitHub Repo](https://github.com/groversomanshi/Cooking-Chatbot)
+
+#### 5. [Musichead](https://github.com/ShubhanC/Musichead)
+*   **Description**: A software engineering project enabling users to discover new music based on target audio attributes (danceability, energy, acousticness) and compare musical characteristics of different tracks.
+*   **Tech Stack**: React, Node.js, Spotify Web API, Audio Analysis
+*   **Links**: [GitHub Repo](https://github.com/ShubhanC/Musichead) *(In Progress)*
+
+#### 6. Discord Wiki
+*   **Description**: Automatically aggregates, organizes, and summarizes chat histories from Discord server channels into structured, searchable wiki/summary pages.
+*   **Tech Stack**: Python, NLP, Discord API
+
+---
+
+### 🔬 Research & Open Source
+
+#### 1. [MFPRL - Mobility & Fall Prevention Research Lab](https://mfp.hk.illinois.edu/)
+*   **Description**: Collaborating with UIUC's Mobility & Fall Prevention Research Lab to build a predictive model that identifies Parkinson's disease from wearable sensor/signal data. Developed the core preprocessing pipeline that translates raw high-frequency sensor files into clean, feature-engineered datasets for model training.
+*   **Tech Stack**: Python, Signal Processing, Machine Learning, Data Science, Healthcare Informatics
+
+#### 2. [FreeLLM API Throttler](https://github.com/ShubhanC/freellmapi)
+*   **Description**: Contributed to open source by designing and implementing a request rate throttler. This resolved a critical issue where LLM-to-agent interactions hit RPM (requests per minute) rate limits too quickly, ensuring stable, paced communication.
+*   **Tech Stack**: Node.js, React, API Integration
+
+---
+
+### 📚 Coursework & Competitions
+
+#### 1. [Illinois Statistics Datathon 2026](https://github.com/ShubhanC/Datathon-2026-SNACs)
+*   **Description**: Developed a high-accuracy, 2-tiered predictive forecasting model with XGBoost regressors and Historical Intraday Profiling to predict call center volumes for four portfolios. Achieved exceptional predictive performance (MAPE: 9.5% - 11.5% for volume, 1.9% - 2.6% for handling times).
+*   **Tech Stack**: XGBoost, Regression, Time Series Forecasting, Data Science
+*   **Links**: [GitHub Repo](https://github.com/ShubhanC/Datathon-2026-SNACs)
+
+#### 2. [Illinois Statistics Datathon 2025](https://github.com/ShubhanC/datathon-2025-ISBS)
+*   **Description**: Built a regression-based machine learning model to predict fourth-quarter consumer spending using three years of transactional history, leveraging the predictions to optimally determine consumer credit line increases.
+*   **Tech Stack**: Regression Analysis, Predictive Modeling, Scikit-learn
+*   **Links**: [GitHub Repo](https://github.com/ShubhanC/datathon-2025-ISBS)
+
+#### 3. [Global Fertility Decline Analysis — IS 312](https://github.com/ShubhanC/income-vs-birthrate-is312)
+*   **Description**: Conducted an econometric study of global fertility rates using World Bank and United Nations data. Used Panel Data methods (Fixed Effects, Between Effects), log-transformations, and Variance Inflation Factor (VIF) diagnostics to reveal highly significant macroeconomic drivers.
+*   **Tech Stack**: Panel Data Analysis, Econometrics, Statistical Modeling, Data Visualization
+*   **Links**: [GitHub Repo](https://github.com/ShubhanC/income-vs-birthrate-is312)
+
+#### 4. [Parkinson's Disease Detection (XGBoost)](https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons)
+*   **Description**: An optimized XGBoost gradient-boosting classifier to detect Parkinson's disease from acoustic/vocal features. Utilized GridSearch hyperparameter tuning on the UCI vocal measurement dataset with 22 feature dimensions.
+*   **Tech Stack**: XGBoost, Scikit-learn, Hyperparameter Optimization, Healthcare ML
+*   **Links**: [GitHub Repo](https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons)
+
+---
+
+## 🛠️ Skills & Technologies
+
+*   **Languages**: Python, R, SQL, C++, HTML5/CSS3, JavaScript (ES6+), Node.js, Bash
+*   **Machine Learning & Data Science**: PyTorch, TensorFlow/Keras, Scikit-learn, XGBoost, Regression Modeling, Time Series Forecasting, Panel Data/Econometric Analysis, Signal Processing, Natural Language Processing (NLP)
+*   **Tools & Libraries**: Git, Streamlit, Flask, PostgreSQL, Leaflet, Motion, Canva, Webpack/Vite
+
+---
+
+## 📬 Contact & Connections
+
+Feel free to reach out or explore my work through these channels:
+
+*   **Email**: [shubhan.chari@gmail.com](mailto:shubhan.chari@gmail.com)
+*   **LinkedIn**: [linkedin.com/in/shubhanchari](https://linkedin.com/in/shubhanchari)
+*   **GitHub**: [github.com/ShubhanC](https://github.com/ShubhanC)
+
+---
+*Created and maintained by [Shubhan Chari](https://shubhanchari.vercel.app/).*
