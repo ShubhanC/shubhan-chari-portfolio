@@ -19,6 +19,13 @@ const STATES = {
   NOTES: 'notes'
 };
 
+const VIDEO_SOURCES = {
+  google_maps: 'assets/videos/google_maps.mp4',
+  photos: 'assets/videos/photos.mp4',
+  pinterest: 'assets/videos/pinterest.mp4',
+  github: 'assets/videos/github.mp4'
+};
+
 // Global state
 let currentState = null;
 let previousState = null;
@@ -148,7 +155,20 @@ async function navigateTo(state, data = {}) {
   isAnimating = true;
 
   const screenContent = getScreenContent();
-  const phoneScreen = getPhoneScreen();
+
+  // Start playback in the icon's click handler so mobile browsers allow audio.
+  if (state === STATES.VIDEO && VIDEO_SOURCES[data.appId]) {
+    if (screenContent) {
+      screenContent.innerHTML = '';
+      screenContent.style.opacity = '1';
+      openVideo(data.appId);
+      currentState = state;
+    }
+    isAnimating = false;
+    return;
+  }
+
+  screenContent?.querySelector('#app-video')?.pause();
 
   // Fade out
   await fadeTransition(screenContent, 1, 0, 150);
@@ -418,6 +438,31 @@ function openVideo(appId) {
   if (!screenContent || !appId) return;
 
   videoContext = { appId };
+
+  const source = VIDEO_SOURCES[appId];
+  if (source) {
+    screenContent.innerHTML = `
+      <div class="view video-view active">
+        <video id="app-video" src="${source}" playsinline preload="auto"></video>
+        <div class="video-error" id="video-error" hidden>Unable to play this video.</div>
+        <button type="button" class="video-close" id="video-close" aria-label="Close video">×</button>
+      </div>
+    `;
+
+    const video = document.getElementById('app-video');
+    const errorMessage = document.getElementById('video-error');
+    video.addEventListener('ended', () => navigateTo(STATES.HOME));
+    video.addEventListener('error', () => {
+      video.hidden = true;
+      errorMessage.hidden = false;
+    });
+    video.play().catch(() => {
+      // Give visitors a manual play control if their browser blocks playback.
+      video.controls = true;
+    });
+    document.getElementById('video-close').addEventListener('click', () => navigateTo(STATES.HOME));
+    return;
+  }
 
   let html = '<div class="view video-view active">';
   html += '<div class="placeholder-content">';

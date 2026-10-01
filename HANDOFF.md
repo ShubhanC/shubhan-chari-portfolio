@@ -29,7 +29,7 @@ portfolio-ds-ml/
 ├── Basic/Fake News Detector/     # External project (linked)
 ├── Basic/Parkinsons/             # External project (linked)
 ├── .env                          # HF_TOKEN (DO NOT COMMIT)
-├── pixi.toml                     # Workspace config (Python 3.12)
+├── pyproject.toml                # uv project config (Python 3.12)
 ├── HANDOFF.md                    # You are here
 └── README.md                     # Root project table
 ```
