@@ -94,9 +94,6 @@
   --action-btn-radius: calc(12px * var(--phone-scale));
   --action-btn-size: calc(15px * var(--phone-scale));
   --back-btn-size: calc(36px * var(--phone-scale));
-  --video-close-top: calc(60px * var(--phone-scale));
-  --video-close-right: calc(20px * var(--phone-scale));
-  --video-close-size: calc(36px * var(--phone-scale));
   --placeholder-icon-size: calc(48px * var(--phone-scale));
 
   /* Popup */
@@ -841,24 +838,12 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  cursor: pointer;
 }
 
-.video-close {
-  position: absolute;
-  top: var(--video-close-top);
-  right: var(--video-close-right);
-  width: var(--video-close-size);
-  height: var(--video-close-size);
-  border: none;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 18px; /* Consider scaling */
+.video-placeholder-view,
+.video-error {
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
 }
 
 .video-error {

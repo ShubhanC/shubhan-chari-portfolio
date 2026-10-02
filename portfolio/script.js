@@ -444,42 +444,42 @@ function openVideo(appId) {
     screenContent.innerHTML = `
       <div class="view video-view active">
         <video id="app-video" src="${source}" playsinline preload="auto"></video>
-        <div class="video-error" id="video-error" hidden>Unable to play this video.</div>
-        <button type="button" class="video-close" id="video-close" aria-label="Close video">×</button>
+        <div class="video-error" id="video-error" hidden>Unable to play this video. Tap to return home.</div>
       </div>
     `;
 
     const video = document.getElementById('app-video');
     const errorMessage = document.getElementById('video-error');
-    video.addEventListener('ended', () => navigateTo(STATES.HOME));
+    const returnHome = () => navigateTo(STATES.HOME);
+    video.addEventListener('click', returnHome);
+    video.addEventListener('ended', returnHome);
+    errorMessage.addEventListener('click', returnHome);
     video.addEventListener('error', () => {
       video.hidden = true;
       errorMessage.hidden = false;
     });
     video.play().catch(() => {
-      // Give visitors a manual play control if their browser blocks playback.
+      // Allow manual playback if the browser blocks the initial play request.
+      video.removeEventListener('click', returnHome);
       video.controls = true;
+      video.addEventListener('play', () => {
+        video.controls = false;
+        video.addEventListener('click', returnHome);
+      }, { once: true });
     });
-    document.getElementById('video-close').addEventListener('click', () => navigateTo(STATES.HOME));
     return;
   }
 
-  let html = '<div class="view video-view active">';
+  let html = '<div class="view video-view video-placeholder-view active">';
   html += '<div class="placeholder-content">';
   html += '<div class="placeholder-icon">🎬</div>';
   html += '<p>Demo video coming soon</p>';
   html += '<p style="font-size: 12px; opacity: 0.7; margin-top: 8px;">' + appId + '</p>';
   html += '</div>';
-  html += '<button class="back-button" id="video-close" style="position: absolute; top: 60px; right: 20px; z-index: 10;">←</button>';
   html += '</div>';
 
   screenContent.innerHTML = html;
-
-  // Close handler
-  const closeBtn = document.getElementById('video-close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => navigateTo(STATES.HOME));
-  }
+  screenContent.querySelector('.video-view').addEventListener('click', () => navigateTo(STATES.HOME));
 }
 
 // Render contacts card
