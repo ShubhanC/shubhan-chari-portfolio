@@ -491,7 +491,7 @@ function renderContacts() {
   const email = profile.email || 'shubhan.chari@gmail.com';
   const github = profile.github || 'https://github.com/ShubhanC';
   const linkedin = profile.linkedin || 'https://linkedin.com/in/shubhanchari';
-  const resumePath = 'Resume - Shubhan Chari.pdf';
+  const resumePath = 'Shubhan_ML_Resume.pdf';
 
   let html = '<div class="view project-detail active">';
   html += '<div class="detail-header">';
@@ -531,8 +531,8 @@ function renderNotes() {
   html += '</div>';
   html += '<div class="detail-content">';
   html += '<div style="font-family: var(--font-notes); font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.9);">';
-  html += 'Hi! I\'m Shubhan, a Statistics & Computer Science student at the University of Illinois.<br><br>';
-  html += 'I\'m interested in  data science and machine learning, but I also enjoy graphic design, listening to music, and more! <br><br>';
+  html += 'Hi! I\'m Shubhan, a Statistics & Computer Science student at the University of Illinois, and currently a Machine Learning / Java Engineering Intern for Kencor Health.<br><br>';
+  html += 'I\'m interested in machine learning and software, but I also enjoy graphic design, listening to music, and more! <br><br>';
   html += 'Feel free to check out my work above or any of the other folders. Each folder represents a category of projects I\'ve worked on. I also have other apps that are more about me, so have fun exploring those! You will see things about my marketing work for ACM at UIUC, the music I listen to, the places I visit, and more!<br><br>';
   html += '</div>';
   html += '</div></div>';
