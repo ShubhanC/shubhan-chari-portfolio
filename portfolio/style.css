@@ -33,9 +33,6 @@
   /* UI offset */
   --ui-offset: 0px;
 
-  /* Vertical shift for the whole phone (negative = up, positive = down) */
-  --phone-offset-y: -40px;
-
   /* Global scale factor - DEFAULT 0.8 (80%) */
   --phone-scale: 0.8;
 
@@ -137,12 +134,32 @@ html, body {
   background: var(--page-bg-color);
 }
 
+button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible,
+:root:not(.pointer-navigation) .home-grid .app-icon-wrapper:focus-visible .app-icon {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+.pointer-navigation button:focus,
+.home-screen:focus,
+.home-grid .app-icon-wrapper:focus {
+  outline: none;
+}
+
 /* Main layout */
 #app {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-height: 100dvh;
   background: var(--page-bg-color);
   position: relative;
 }
@@ -157,12 +174,9 @@ html, body {
 /* Phone container */
 .phone-container {
   position: relative;
-  top: var(--phone-offset-y);
   width: calc((var(--phone-width) + var(--phone-frame-padding) * 2) * var(--phone-scale));
   height: calc((var(--phone-height) + var(--phone-frame-padding) * 2) * var(--phone-scale));
   z-index: 1;
-  transform-origin: center center;
-  transform: scale(var(--phone-scale));
 }
 
 /* Phone frame */
@@ -249,27 +263,6 @@ html, body {
   cursor: pointer;
 }
 
-/* Video sheets */
-.video-sheet {
-  position: absolute;
-  top: var(--actual-frame-padding);
-  left: var(--actual-frame-padding);
-  right: var(--actual-frame-padding);
-  bottom: var(--actual-frame-padding);
-  border-radius: var(--actual-screen-radius);
-  object-fit: cover;
-  z-index: 60;
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.3s ease;
-}
-
-.folder-video {
-  z-index: 61;
-}
-
 /* Lock Screen */
 .lock-screen {
   position: relative;
@@ -283,12 +276,6 @@ html, body {
   z-index: 150;
   cursor: pointer;
   transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.lock-screen.unlocked {
-  opacity: 0;
-  transform: scale(1.1);
-  pointer-events: none;
 }
 
 .wallpaper {
@@ -338,6 +325,10 @@ html, body {
 .unlock-hint {
   position: absolute;
   bottom: var(--unlock-hint-bottom);
+  z-index: 1;
+  padding: 4px 8px;
+  color: white;
+  cursor: pointer;
   font-size: var(--unlock-hint-size);
   opacity: 0.6;
   animation: pulse 2s ease-in-out infinite;
@@ -491,17 +482,7 @@ html, body {
 }
 
 .dock-item[data-app="spotify"] {
-  width: var(--dock-item-size);
-  height: var(--dock-item-size);
-  border-radius: var(--dock-item-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--dock-item-font);
   background: #000000;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-  overflow: hidden;
 }
 
 .dock-icon {
@@ -521,6 +502,9 @@ html, body {
 
 .dock-item:hover {
   transform: scale(1.1);
+}
+
+.dock-item:not([data-app="spotify"]):hover {
   background: rgba(255, 255, 255, 0.25);
 }
 
@@ -579,6 +563,8 @@ html, body {
 }
 
 .popup-header {
+  text-align: left;
+  cursor: pointer;
   padding: var(--popup-padding);
   font-size: var(--popup-font-size);
   font-weight: 700;
@@ -597,7 +583,9 @@ html, body {
   display: none;
 }
 
-  .folder-item {
+.folder-item {
+    width: 100%;
+    text-align: left;
     display: flex;
     align-items: center;
     gap: var(--folder-item-gap);
@@ -637,6 +625,7 @@ html, body {
 }
 
 .folder-item-title {
+  display: block;
   font-size: var(--folder-item-title-size);
   font-weight: 600;
   color: #1a1a1a;
@@ -644,6 +633,7 @@ html, body {
 }
 
 .folder-item-category {
+  display: block;
   font-size: var(--folder-item-category-size);
   color: #666;
 }
@@ -846,6 +836,10 @@ html, body {
   cursor: pointer;
 }
 
+.video-placeholder-view {
+  width: 100%;
+}
+
 .video-error {
   position: absolute;
   inset: 0;
@@ -860,46 +854,32 @@ html, body {
   display: none;
 }
 
-/* Placeholder styles */
-.video-placeholder-overlay {
-  position: absolute;
-  inset: var(--actual-frame-padding);
-  border-radius: var(--actual-screen-radius);
-  z-index: 62;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
 .placeholder-content {
   text-align: center;
   color: white;
 }
 
 .placeholder-icon {
+  display: block;
   font-size: var(--placeholder-icon-size);
   margin-bottom: 12px;
 }
 
-/* Responsive scaling - override scale based on viewport */
-@media (max-width: 480px) {
-  :root { --phone-scale: 0.5; }
+.screen-message {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  color: white;
+  text-align: center;
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  :root { --phone-scale: 0.7; }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  :root { --phone-scale: 0.85; }
-}
-
-@media (min-width: 1025px) and (max-width: 1400px) {
-  :root { --phone-scale: 1; }
-}
-
-@media (min-width: 1401px) {
-  :root { --phone-scale: 1.1; }
+.retry-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #333;
+  cursor: pointer;
 }

@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/motion@12.7.4/dist/motion.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,12 +20,6 @@
       <div class="phone-frame">
         <div class="phone-bezel-overlay" id="bezel-overlay"></div>
         <div class="phone-inner-shadow" id="inner-shadow"></div>
-        <div class="video-placeholder-overlay" id="video-placeholder" style="display:none;">
-          <div class="placeholder-content">
-            <div class="placeholder-icon">🎬</div>
-            <p>Demo video coming soon</p>
-          </div>
-        </div>
         <div class="sheet-bg" id="sheet-bg"></div>
 
         <div class="phone-screen" id="phone-screen">
@@ -34,20 +27,7 @@
         </div>
 
         <div class="dynamic-island" id="dynamic-island"></div>
-        <div class="home-bar" id="home-bar"></div>
-
-        <!-- Video sheets for utility apps -->
-        <video class="video-sheet" data-app="camera" muted playsinline loop></video>
-        <video class="video-sheet" data-app="spotify" muted playsinline loop></video>
-        <video class="video-sheet" data-app="google-maps" muted playsinline loop></video>
-        <video class="video-sheet" data-app="photos" muted playsinline loop></video>
-        <video class="video-sheet" data-app="pinterest" muted playsinline loop></video>
-        <video class="video-sheet" data-app="github" muted playsinline loop></video>
-        <video class="video-sheet" data-app="canva" muted playsinline loop></video>
-
-        <!-- Folder video crossfade pair -->
-        <video class="video-sheet folder-video" id="folder-video-a" muted playsinline loop></video>
-        <video class="video-sheet folder-video" id="folder-video-b" muted playsinline loop></video>
+        <button type="button" class="home-bar" id="home-bar" aria-label="Return home" disabled></button>
       </div>
     </div>
   </div>

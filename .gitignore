@@ -225,3 +225,7 @@ graphify-out/
 Portfolio-org-spec.md
 old-site-backup/
 index.html.bak
+
+# Local browser tests
+node_modules/
+test-results/

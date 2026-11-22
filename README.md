@@ -13,8 +13,10 @@ This repository serves as a centralized hub for my data science, machine learnin
 The portfolio website is a unique, fully interactive web experience that simulates a mobile OS. Visitors can click/tap to unlock the device, browse "apps" representing different project categories (folders), open utility apps like Spotify and Camera, view a custom Notes and Contacts app, and access details of all my projects.
 
 *   **Path**: `portfolio/`
-*   **Tech Stack**: Vanilla HTML5, CSS3 (using custom properties and CSS Grid), Modern ES6+ JavaScript, `corner-smoothing` squircle observer, and Motion library for transitions.
+*   **Tech Stack**: Vanilla HTML5, CSS3 (using custom properties and CSS Grid), Modern ES6+ JavaScript, `corner-smoothing` squircle observer, and CSS transitions.
 *   **Data Source**: Driven dynamically by `portfolio/data/projects.json`.
+
+Run `npm ci` and `npm run dev` to preview the site at http://127.0.0.1:8000. Run `npm test` for the browser checks. See [HANDOFF.md](HANDOFF.md) for setup details.
 
 ---
 
@@ -84,8 +86,8 @@ My projects are organized into folders reflecting their context (Personal, Resea
 *   **Tech Stack**: Panel Data Analysis, Econometrics, Statistical Modeling, Data Visualization
 *   **Links**: [GitHub Repo](https://github.com/ShubhanC/income-vs-birthrate-is312)
 
-#### 4. [Parkinson's Disease Detection (XGBoost)](https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons)
-*   **Description**: An optimized XGBoost gradient-boosting classifier to detect Parkinson's disease from acoustic/vocal features. Utilized GridSearch hyperparameter tuning on the UCI vocal measurement dataset with 22 feature dimensions.
+#### 4. [Parkinson's Disease Detection (Gradient Boosting)](https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons)
+*   **Description**: A scikit-learn gradient boosting classifier trained on 22 vocal features from the UCI Parkinson's dataset. Model tuning and evaluation keep recordings from the same person together.
 *   **Tech Stack**: XGBoost, Scikit-learn, Hyperparameter Optimization, Healthcare ML
 *   **Links**: [GitHub Repo](https://github.com/ShubhanC/portfolio-ds-ml/tree/main/Basic/Parkinsons)
 
@@ -95,7 +97,7 @@ My projects are organized into folders reflecting their context (Personal, Resea
 
 *   **Languages**: Python, R, SQL, C++, HTML5/CSS3, JavaScript (ES6+), Node.js, Bash
 *   **Machine Learning & Data Science**: PyTorch, TensorFlow/Keras, Scikit-learn, XGBoost, Regression Modeling, Time Series Forecasting, Panel Data/Econometric Analysis, Signal Processing, Natural Language Processing (NLP)
-*   **Tools & Libraries**: Git, Streamlit, Flask, PostgreSQL, Leaflet, Motion, Canva, Webpack/Vite
+*   **Tools & Libraries**: Git, Streamlit, Flask, PostgreSQL, Leaflet, Canva, Webpack/Vite
 
 ---
 

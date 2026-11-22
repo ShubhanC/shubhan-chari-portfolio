@@ -28,47 +28,47 @@ const VIDEO_SOURCES = {
 
 // Global state
 let currentState = null;
-let previousState = null;
 let isAnimating = false;
 let folderContext = null;
-let currentProject = null;
-let videoContext = null;
-
-/**
- * Set the phone scale factor (0.1 - 3.0 typical range)
- * Updates the CSS variable --phone-scale which controls all sizing
- * @param {number} factor - Scale factor (1.0 = 100%, 0.8 = 80%, etc.)
- */
-function setPhoneScale(factor) {
-  // Clamp the value to reasonable bounds
-  const clampedFactor = Math.max(0.1, Math.min(3.0, factor));
-  document.documentElement.style.setProperty('--phone-scale', clampedFactor);
-
-  // Optional: dispatch an event for other components to react to
-  window.dispatchEvent(new CustomEvent('phonescalechange', {
-    detail: { factor: clampedFactor }
-  }));
-}
 
 // Lazy DOM access - gets elements when needed, not at load time
 function getScreenContent() {
   return document.getElementById('screen-content');
 }
 
-function getPhoneScreen() {
-  return document.getElementById('phone-screen');
+function showError(message, buttonLabel, retry) {
+  const screen = getScreenContent();
+  screen.innerHTML = '<div class="screen-message"><p role="alert"></p><button type="button" class="retry-button"></button></div>';
+  screen.querySelector('p').textContent = message;
+  const button = screen.querySelector('button');
+  button.textContent = buttonLabel;
+  button.addEventListener('click', retry);
+  return button;
 }
 
 // Load data and initialize
 async function init() {
+  const screen = getScreenContent();
+  const restoreFocus = screen.contains(document.activeElement);
+  screen.innerHTML = '<div class="screen-message" role="status">Loading portfolio…</div>';
   try {
     const response = await fetch('data/projects.json');
+    if (!response.ok) throw new Error(`Project request failed (${response.status})`);
     const data = await response.json();
+    if (!Array.isArray(data?.projects) || !data.projects.every(project =>
+      project && ['id', 'folder', 'title', 'category', 'description'].every(
+        key => typeof project[key] === 'string'
+      ) && (project.tags == null || (
+        Array.isArray(project.tags) && project.tags.every(tag => typeof tag === 'string')
+      ))
+    )) throw new Error('Invalid project data');
+
     window.APP_DATA = data;
     renderLockScreen();
+    if (restoreFocus) screen.querySelector('button').focus();
   } catch (error) {
     console.error('Failed to load portfolio data:', error);
-    renderLockScreen();
+    showError('Could not load the portfolio.', 'Retry', init).focus();
   }
 }
 
@@ -104,7 +104,7 @@ function renderLockScreen() {
         <h1 class="lock-name">Shubhan Chari</h1>
         <p class="lock-tagline">Statistics & Computer Science at UIUC</p>
       </div>
-      <div class="unlock-hint">Tap to unlock</div>
+      <button type="button" class="unlock-hint" aria-label="Unlock portfolio">Tap to unlock</button>
     </div>
   `;
 
@@ -139,13 +139,14 @@ function fadeTransition(element, fromOpacity, toOpacity, duration) {
   });
 }
 
-// Set phone scale - allows dynamic resizing of the entire phone UI
-function setPhoneScale(factor) {
-  // Clamp factor to reasonable range
-  const clampedFactor = Math.max(0.3, Math.min(2.0, factor));
-  document.documentElement.style.setProperty('--phone-scale', clampedFactor);
-  // Dispatch custom event for any listeners
-  window.dispatchEvent(new CustomEvent('phonescalechange', { detail: { scale: clampedFactor } }));
+function fitPhoneToViewport() {
+  const root = document.documentElement;
+  const styles = getComputedStyle(root);
+  const padding = 2 * parseFloat(styles.getPropertyValue('--phone-frame-padding'));
+  const width = parseFloat(styles.getPropertyValue('--phone-width')) + padding;
+  const height = parseFloat(styles.getPropertyValue('--phone-height')) + padding;
+  const scale = Math.min(0.8, (root.clientWidth - 24) / width, (root.clientHeight - 24) / height);
+  root.style.setProperty('--phone-scale', scale);
 }
 
 // Navigate to state
@@ -156,55 +157,51 @@ async function navigateTo(state, data = {}) {
 
   const screenContent = getScreenContent();
 
-  // Start playback in the icon's click handler so mobile browsers allow audio.
-  if (state === STATES.VIDEO && VIDEO_SOURCES[data.appId]) {
-    if (screenContent) {
-      screenContent.innerHTML = '';
-      screenContent.style.opacity = '1';
+  const homeBar = document.getElementById('home-bar');
+  try {
+    screenContent.querySelector('#app-video')?.pause();
+
+    // Start playback in the icon's click handler so mobile browsers allow audio.
+    if (state === STATES.VIDEO && VIDEO_SOURCES[data.appId]) {
       openVideo(data.appId);
-      currentState = state;
+    } else {
+      screenContent.inert = true;
+      await fadeTransition(screenContent, 1, 0, 150);
+      switch (state) {
+        case STATES.HOME:
+          renderHomeScreen();
+          break;
+        case STATES.FOLDER:
+          renderFolder();
+          break;
+        case STATES.PROJECT_DETAIL:
+          renderProjectDetail(data);
+          break;
+        case STATES.VIDEO:
+          openVideo(data.appId);
+          break;
+        case STATES.CONTACTS:
+          renderContacts();
+          break;
+        case STATES.NOTES:
+          renderNotes();
+          break;
+      }
+      await fadeTransition(screenContent, 0, 1, 200);
     }
+    currentState = state;
+    homeBar.disabled = state === STATES.HOME;
+    screenContent.inert = false;
+    const focusTarget = state === STATES.HOME ? '.home-screen' : 'button:not([hidden])';
+    (screenContent.querySelector(focusTarget) || homeBar).focus();
+  } catch (error) {
+    console.error('Could not open portfolio view:', error);
+    screenContent.style.opacity = '1';
+    screenContent.inert = false;
+    showError('Could not open this screen.', 'Return home', () => navigateTo(STATES.HOME)).focus();
+  } finally {
     isAnimating = false;
-    return;
   }
-
-  screenContent?.querySelector('#app-video')?.pause();
-
-  // Fade out
-  await fadeTransition(screenContent, 1, 0, 150);
-
-  // Clear content
-  if (screenContent) {
-    screenContent.innerHTML = '';
-  }
-
-  // Render target state
-  switch (state) {
-    case STATES.HOME:
-      renderHomeScreen();
-      break;
-    case STATES.FOLDER:
-      renderFolder();
-      break;
-    case STATES.PROJECT_DETAIL:
-      renderProjectDetail(data);
-      break;
-    case STATES.VIDEO:
-      openVideo(data.appId);
-      break;
-    case STATES.CONTACTS:
-      renderContacts();
-      break;
-    case STATES.NOTES:
-      renderNotes();
-      break;
-  }
-
-  // Fade in
-  await fadeTransition(screenContent, 0, 1, 200);
-
-  currentState = state;
-  isAnimating = false;
 }
 
 // Render home screen
@@ -241,43 +238,42 @@ function renderHomeScreen() {
     { name: 'Canva', appId: 'canva', ext: 'png' }
   ];
 
-  let html = '<div class="view home-screen">';
+  let html = '<div class="view home-screen" tabindex="-1">';
   html += '<div class="home-grid">';
 
   // Render folder icons
   activeFolders.forEach(folder => {
     const miniIcons = folderProjects[folder]
       .slice(0, 4)
-      .map(() => '<div class="mini-icon"></div>')
+      .map(() => '<span class="mini-icon"></span>')
       .join('');
 
     html += `
-      <div class="app-icon-wrapper" data-folder="${folder}">
-        <div class="app-icon folder-icon">
-          <div class="mini-icons">${miniIcons}</div>
-        </div>
+      <button type="button" class="app-icon-wrapper" data-folder="${folder}">
+        <span class="app-icon folder-icon" aria-hidden="true">
+          <span class="mini-icons">${miniIcons}</span>
+        </span>
         <span class="app-label">${folderNames[folder]}</span>
-      </div>
+      </button>
     `;
   });
 
   // Render utility apps
   utilityApps.forEach(app => {
     html += `
-      <div class="app-icon-wrapper" data-app="${app.appId}">
-        <div class="app-icon" style="background-image: url('assets/icons/${app.appId}.${app.ext}'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-        </div>
+      <button type="button" class="app-icon-wrapper" data-app="${app.appId}">
+        <span class="app-icon" style="background-image: url('assets/icons/${app.appId}.${app.ext}'); background-size: contain; background-position: center; background-repeat: no-repeat;"></span>
         <span class="app-label">${app.name}</span>
-      </div>
+      </button>
     `;
   });
 
   html += '</div>';
   html += '<div class="dock">';
-  html += '<div class="dock-item" data-action="contacts"><img src="assets/icons/contacts.webp" class="dock-icon" alt="Contacts"/></div>';
-  html += '<div class="dock-item" data-action="notes"><img src="assets/icons/notes.svg" class="dock-icon" alt="Notes"/></div>';
-  html += '<div class="dock-item" data-action="video" data-app="camera"><img src="assets/icons/camera.webp" class="dock-icon" alt="Camera"/></div>';
-  html += '<div class="dock-item" data-action="video" data-app="spotify"><img src="assets/icons/spotify.png" class="dock-icon" alt="Spotify"/></div>';
+  html += '<button type="button" class="dock-item" data-action="contacts"><img src="assets/icons/contacts.webp" class="dock-icon" alt="Contacts"/></button>';
+  html += '<button type="button" class="dock-item" data-action="notes"><img src="assets/icons/notes.svg" class="dock-icon" alt="Notes"/></button>';
+  html += '<button type="button" class="dock-item" data-action="video" data-app="camera"><img src="assets/icons/camera.webp" class="dock-icon" alt="Camera"/></button>';
+  html += '<button type="button" class="dock-item" data-action="video" data-app="spotify"><img src="assets/icons/spotify.png" class="dock-icon" alt="Spotify"/></button>';
   html += '</div>';
   html += '</div>';
 
@@ -297,7 +293,7 @@ function attachHomeScreenListeners() {
       const folder = wrapper.dataset.folder;
       const projects = window.APP_DATA.projects.filter(p => p.folder === folder);
 
-      folderContext = { folder, projects, index: 0 };
+      folderContext = { folder, projects };
       navigateTo(STATES.FOLDER);
     });
   });
@@ -340,21 +336,21 @@ function renderFolder() {
   let html = '<div class="view folder-popup active">';
   html += '<div class="popup-backdrop"></div>';
   html += '<div class="popup-content">';
-  html += `<div class="popup-header">${folderNames[folder]}</div>`;
+  html += `<button type="button" class="popup-header" aria-label="${folderNames[folder]} — return home">${folderNames[folder]}</button>`;
   html += '<div class="folder-scroll">';
 
-  projects.forEach((project, index) => {
+  projects.forEach(project => {
     const domainColor = DOMAIN_COLORS[project.category] || '#6c7ae0';
     html += `
-      <div class="folder-item" data-project-id="${project.id}" data-index="${index}">
-        <div class="folder-item-icon" style="background: ${domainColor};">
+      <button type="button" class="folder-item" data-project-id="${project.id}">
+        <span class="folder-item-icon" style="background: ${domainColor};" aria-hidden="true">
           ${project.title.charAt(0)}
-        </div>
-        <div class="folder-item-info">
-          <div class="folder-item-title">${project.title}</div>
-          <div class="folder-item-category">${project.category}</div>
-        </div>
-      </div>
+        </span>
+        <span class="folder-item-info">
+          <span class="folder-item-title">${project.title}</span>
+          <span class="folder-item-category">${project.category}</span>
+        </span>
+      </button>
     `;
   });
 
@@ -365,7 +361,6 @@ function renderFolder() {
   // Back button
   const header = document.querySelector('.popup-header');
   if (header) {
-    header.style.cursor = 'pointer';
     header.addEventListener('click', () => navigateTo(STATES.HOME));
   }
 
@@ -375,8 +370,6 @@ function renderFolder() {
       const projectId = item.dataset.projectId;
       const project = projects.find(p => p.id === projectId);
       if (project) {
-        folderContext.index = parseInt(item.dataset.index);
-        currentProject = project;
         navigateTo(STATES.PROJECT_DETAIL, project);
       }
     });
@@ -394,7 +387,7 @@ function renderProjectDetail(project) {
 
   let html = '<div class="view project-detail active">';
   html += '<div class="detail-header">';
-  html += '<button class="back-button" id="detail-back">←</button>';
+  html += '<button type="button" class="back-button" id="detail-back" aria-label="Return home">←</button>';
   html += `<div class="detail-icon" style="background: ${domainColor};">${project.title.charAt(0)}</div>`;
   html += `<div class="status-indicator ${statusClass}">${statusText}</div>`;
   html += '</div>';
@@ -437,14 +430,12 @@ function openVideo(appId) {
   const screenContent = getScreenContent();
   if (!screenContent || !appId) return;
 
-  videoContext = { appId };
-
   const source = VIDEO_SOURCES[appId];
   if (source) {
     screenContent.innerHTML = `
       <div class="view video-view active">
         <video id="app-video" src="${source}" playsinline preload="auto"></video>
-        <div class="video-error" id="video-error" hidden>Unable to play this video. Tap to return home.</div>
+        <button type="button" class="video-error" id="video-error" hidden>Unable to play this video. Return home.</button>
       </div>
     `;
 
@@ -470,13 +461,14 @@ function openVideo(appId) {
     return;
   }
 
-  let html = '<div class="view video-view video-placeholder-view active">';
-  html += '<div class="placeholder-content">';
-  html += '<div class="placeholder-icon">🎬</div>';
-  html += '<p>Demo video coming soon</p>';
-  html += '<p style="font-size: 12px; opacity: 0.7; margin-top: 8px;">' + appId + '</p>';
-  html += '</div>';
-  html += '</div>';
+  const html = `
+    <button type="button" class="view video-view video-placeholder-view active" aria-label="Demo video coming soon. Return home.">
+      <span class="placeholder-content">
+        <span class="placeholder-icon" aria-hidden="true">🎬</span>
+        <span>Demo video coming soon</span>
+      </span>
+    </button>
+  `;
 
   screenContent.innerHTML = html;
   screenContent.querySelector('.video-view').addEventListener('click', () => navigateTo(STATES.HOME));
@@ -495,7 +487,7 @@ function renderContacts() {
 
   let html = '<div class="view project-detail active">';
   html += '<div class="detail-header">';
-  html += '<button class="back-button" id="contacts-back">←</button>';
+  html += '<button type="button" class="back-button" id="contacts-back" aria-label="Return home">←</button>';
   html += '<div class="detail-icon" style="background: #ffffff;"><img src="assets/icons/contacts.webp" class="detail-icon-img" alt="Contacts"/></div>';
   html += '<div style="color: white; font-weight: 600; font-size: 16px;">Contacts</div>';
   html += '</div>';
@@ -525,7 +517,7 @@ function renderNotes() {
 
   let html = '<div class="view project-detail active">';
   html += '<div class="detail-header">';
-  html += '<button class="back-button" id="notes-back">←</button>';
+  html += '<button type="button" class="back-button" id="notes-back" aria-label="Return home">←</button>';
   html += '<div class="detail-icon" style="background: #ffffff;"><img src="assets/icons/notes.svg" class="detail-icon-img" alt="Notes"/></div>';
   html += '<div style="color: white; font-weight: 600; font-size: 16px;">Notes</div>';
   html += '</div>';
@@ -552,6 +544,8 @@ function setupSwipeGesture() {
 
   let startY = 0;
   let isSwiping = false;
+
+  homeBar.addEventListener('click', () => navigateTo(STATES.HOME));
 
   homeBar.addEventListener('mousedown', (e) => {
     startY = e.clientY;
@@ -593,8 +587,12 @@ function setupSwipeGesture() {
 
 // Keyboard support
 function setupKeyboardNavigation() {
+  const root = document.documentElement;
+  root.classList.add('pointer-navigation');
+  document.addEventListener('pointerdown', () => root.classList.add('pointer-navigation'));
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && currentState !== STATES.LOCK && currentState !== STATES.HOME) {
+    if (e.key === 'Tab') root.classList.remove('pointer-navigation');
+    if (e.key === 'Escape' && currentState && currentState !== STATES.LOCK && currentState !== STATES.HOME) {
       navigateTo(STATES.HOME);
     }
   });
@@ -602,9 +600,9 @@ function setupKeyboardNavigation() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+  fitPhoneToViewport();
+  window.addEventListener('resize', fitPhoneToViewport);
   setupSwipeGesture();
   setupKeyboardNavigation();
   init();
-  // Set default scale to 0.9 (90%) as requested
-  setPhoneScale(0.88);
 });
