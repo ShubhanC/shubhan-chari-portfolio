@@ -55,6 +55,26 @@ test('home starts at an inactive focus target and Tab outlines only the grid ico
   await expect(home).toBeFocused();
 });
 
+test('first Tab after closing Notes resumes at Notes', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Unlock portfolio' }).click();
+  const home = page.locator('.home-screen');
+  await expect(home).toBeFocused();
+
+  const notes = page.getByRole('button', { name: 'Notes', exact: true });
+  await notes.press('Enter');
+  await expect(page.getByText('Notes', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Return home' }).first().click();
+  await expect(home).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(home).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(notes).toBeFocused();
+  await expect(notes).toHaveCSS('outline-style', 'solid');
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', { name: 'Camera' })).toBeFocused();
+});
+
 test('phone fits short and narrow viewports after resize', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('button', { name: 'Unlock portfolio' })).toBeVisible();
@@ -93,5 +113,8 @@ for (const app of ['Photos', 'GitHub', 'Maps', 'Pinterest']) {
     // Play the actual file through to its native ended event.
     await video.evaluate(el => { el.playbackRate = 4; });
     await expect(icon).toBeEnabled({ timeout: 15_000 });
+    await expect(page.locator('.home-screen')).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(icon).toBeFocused();
   });
 }

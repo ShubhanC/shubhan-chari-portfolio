@@ -30,6 +30,7 @@ const VIDEO_SOURCES = {
 let currentState = null;
 let isAnimating = false;
 let folderContext = null;
+let homeFocusSelector = null;
 
 // Lazy DOM access - gets elements when needed, not at load time
 function getScreenContent() {
@@ -287,6 +288,13 @@ function renderHomeScreen() {
 
 // Attach home screen event listeners
 function attachHomeScreenListeners() {
+  // Capture the launcher before navigation replaces the home screen.
+  document.querySelector('.home-screen').addEventListener('click', event => {
+    const button = event.target.closest('button');
+    const key = button && ['folder', 'app', 'action'].find(key => button.dataset[key]);
+    if (key) homeFocusSelector = `button[data-${key}="${CSS.escape(button.dataset[key])}"]`;
+  }, { capture: true });
+
   // Folder clicks
   document.querySelectorAll('.app-icon-wrapper[data-folder]').forEach(wrapper => {
     wrapper.addEventListener('click', () => {
@@ -591,7 +599,16 @@ function setupKeyboardNavigation() {
   root.classList.add('pointer-navigation');
   document.addEventListener('pointerdown', () => root.classList.add('pointer-navigation'));
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') root.classList.remove('pointer-navigation');
+    if (e.key === 'Tab') {
+      root.classList.remove('pointer-navigation');
+      if (!e.shiftKey && homeFocusSelector && document.activeElement.matches('.home-screen')) {
+        const launcher = document.activeElement.querySelector(homeFocusSelector);
+        if (launcher) {
+          e.preventDefault();
+          launcher.focus();
+        }
+      }
+    }
     if (e.key === 'Escape' && currentState && currentState !== STATES.LOCK && currentState !== STATES.HOME) {
       navigateTo(STATES.HOME);
     }
